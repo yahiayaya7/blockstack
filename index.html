@@ -10,6 +10,321 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
+
+<link rel="manifest" href="manifest.json"/>
+<script src="blockstack.js" >
+</script>
+
+<script language = "javascript" type = "text/javascript"  >
+/*const appConfig = new blockstack.AppConfig(["store_write", "publish_data"])
+ var userSession = new blockstack.UserSession({ appConfig, });*/
+ 
+ function signin() {
+   blockstack.redirectToSignIn('https://yahiayaya7.github.io/blockstack/index.html','https://yahiayaya7.github.io/blockstack/manifest.json',["store_write", "publish_data"]);
+  //blockstack.UserSession.appConfig=appConfig;
+  
+ }
+ function sigout() {
+   blockstack.signUserOut(window.location.origin)
+ 
+ }
+  function showProfile(profile) {
+   var person = new blockstack.Person(profile)
+   
+   document.getElementById("nom").innerHTML =person.name();
+   document.getElementById("avatar-image").setAttribute('src', person.avatarUrl());
+   //document.getElementById('section-1').style.display = 'none'
+   //document.getElementById('section-2').style.display = 'block'
+ }
+
+ function issigin()
+ { if (blockstack.isUserSignedIn()) { document.getElementById("state").innerHTML ='signed ok';}
+  else{ document.getElementById("state").innerHTML ='not signed'; }
+  if (blockstack.isUserSignedIn()) {
+  
+  const userData = blockstack.loadUserData()
+   showProfile(userData.profile)
+  
+   document.getElementById("state").innerHTML =userData.username;
+ } else if (blockstack.isSignInPending()) {
+   blockstack.handlePendingSignIn()
+   .then(userData => {
+     showProfile(userData.profile)
+   })
+ }
+ }
+
+//******************************************************** SHARE PUBLIC ******************************************************
+ async function sharepub()
+  {let options = {
+  encrypt: false
+}
+   try{var tpost=document.getElementById("postpub").value;
+       var d=new Date;
+       //var dd = d.getDate().toString()+d.getFullYear().toString()+d.getMonth().toString()+d.getHours().toString()+d.getMinutes().toString()+d.getSeconds().toString();
+       var dd = d.getFullYear().toString()+("0" + (d.getMonth().toString())).slice(-2)+("0" + (d.getDate().toString())).slice(-2)+("0" + (d.getHours().toString())).slice(-2)+("0" + (d.getMinutes().toString())).slice(-2)+("0" + (d.getSeconds().toString())).slice(-2);
+       var filenamepub='PUBLIC_'+dd;
+      // document.getElementById("post").value=filename;
+    blockstack.putFile(filenamepub, tpost, options);
+       document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepub, options);}
+   catch(err){
+alert(err.message);}
+  //------------------------------------------------------------------------------
+   {  var listoffiles='';
+      var filenamepubindex='PUB_index';
+  blockstack.listFiles((filename)=>{listoffiles=listoffiles+filename+'X';
+   var str = listoffiles.toString();
+      var listpost = str.split('X');
+      var i;
+      var strr='';
+for (i = 0; i < listpost.length; i++) {
+  var post = listpost[i];
+        if (post[3] =='L') {
+          strr = strr + listpost[i] + 'X';
+          }
+}   
+    var pubindex = strr + filenamepub; 
+    blockstack.putFile(filenamepubindex, pubindex, {encrypt: false });
+    //document.getElementById("global").innerHTML=pubindex                       
+         return true})}
+   //------------------------------------------------------------------------------
+  }
+ 
+//******************************************************** SHARE PRIVATE ******************************************************
+  async function sharepriv()
+  {let options = {
+  encrypt: true
+}
+   try{var tpost=document.getElementById("postpriv").value;
+       var d=new Date;
+       //var dd = d.getDate().toString()+d.getFullYear().toString()+d.getMonth().toString()+d.getHours().toString()+d.getMinutes().toString()+d.getSeconds().toString();
+      var dd = d.getFullYear().toString()+("0" + (d.getMonth().toString())).slice(-2)+("0" + (d.getDate().toString())).slice(-2)+("0" + (d.getHours().toString())).slice(-2)+("0" + (d.getMinutes().toString())).slice(-2)+("0" + (d.getSeconds().toString())).slice(-2);
+       var filenamepriv='PRIVATE_'+dd;
+      // document.getElementById("post").value=filename;
+    blockstack.putFile(filenamepriv, tpost, options);
+       document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepriv, options);}
+   catch(err){
+alert(err.message);}
+   
+     //------------------------------------------------------------------------------
+   {  var listoffiles='';
+      var filenameprivindex='PRIV_index';
+  blockstack.listFiles((filename)=>{listoffiles=listoffiles+filename+'X';
+   var str = listoffiles.toString();
+      var listpost = str.split('X');
+      var i;
+      var strr='';
+for (i = 0; i < listpost.length; i++) {
+  var post = listpost[i];
+        if (post[4] =='A') {
+          strr = strr + listpost[i] + 'X';
+          }
+}   
+    var privindex = strr + filenamepriv; 
+    blockstack.putFile(filenameprivindex, privindex, {encrypt: true });
+    //document.getElementById("global").innerHTML=pubindex                       
+         return true})}
+   //------------------------------------------------------------------------------
+  }
+ 
+  
+/*   async function pubindex()
+  {let options = {
+  encrypt: false
+}
+   try{  var tpost=document.getElementById("pubindex").value;      
+       var filenamepubindex='pubindex.txt';
+      // document.getElementById("post").value=filename;
+    blockstack.putFile(filenamepubindex, tpost, options);
+       document.getElementById("purl").innerHTML=await blockstack.getFileUrl(filenamepubindex, options);
+       }
+   catch(err){
+alert(err.message);}
+  }
+  */
+
+  //******************************************************** SHOW PUBLIC POST ******************************************************
+  async function showpub()
+  {let options = {
+  decrypt: false}
+  
+  var filetoshow=document.getElementById("posttoshow").value;
+   try{var t= await blockstack.getFile(filetoshow, options);
+  document.getElementById("posted").innerHTML=t}
+   
+ catch(err){
+alert(err.message);
+ } }
+ 
+//******************************************************** SHOW PRIVATE POST ****************************************************** 
+   async function showpriv()
+  {let options = {
+  decrypt: true}
+  
+  var filetoshow=document.getElementById("posttoshow").value;
+   try{var t= await blockstack.getFile(filetoshow, options);
+  document.getElementById("posted").innerHTML=t}
+   
+ catch(err){
+alert(err.message);
+ } }
+  
+  
+   //******************************************************** SHOW PUBLIC CONTENT ****************************************************** 
+   async function pubcontent(){ 
+     
+  var p='PUB_index';
+  try{var t= await blockstack.getFile(p, {decrypt: false });
+      var listpost = t.split('X');
+      var i;
+      var str='';
+for (i = 0; i < listpost.length; i++) {
+  var x= await blockstack.getFile(listpost[i], {decrypt: false });
+  if(x==null){str=str;}
+  else{str += listpost[i] +"==>"+ x + "<br>";}
+}
+   document.getElementById("pubcontent").innerHTML=str;
+        }
+    catch(err){
+     alert(err.message);}
+     }
+  
+  
+   //******************************************************** SHOW PRIVATE CONTENT ****************************************************** 
+   async function privcontent(){ 
+     
+  var p='PRIV_index';
+  try{var t= await blockstack.getFile(p, {decrypt: true });
+      var listpost = t.split('X');
+      var i;
+      var str='';
+for (i = 0; i < listpost.length; i++) {
+  var x= await blockstack.getFile(listpost[i], {decrypt: true });
+  if(x==null){str=str;}
+  else{str += listpost[i] +"==>"+ x + "<br>";}
+}
+   document.getElementById("privcontent").innerHTML=str;
+   //document.getElementById("global").innerHTML=t;  
+        }
+    catch(err){
+     alert(err.message);}
+     }
+  
+ 
+//******************************************************** LIST FILES ****************************************************** 
+ function listf(){ var listoffiles=' ';
+                  document.getElementById("note").innerHTML='display outstanding'    
+  blockstack.listFiles((filename)=>{listoffiles=listoffiles+'<br/>'+filename;
+   //document.write(filename)
+ 
+    document.getElementById("note").innerHTML=listoffiles
+         return true}     )
+                  
+          
+     /*  {let options = {encrypt: false}            
+      try{     var li = 'yayaya';
+       var filenamepubindex='pubindex.txt';
+      // document.getElementById("post").value=filename;
+    blockstack.putFile(filenamepubindex, li, options);
+       //document.getElementById("purl").innerHTML=await blockstack.getFileUrl(filenamepubindex, options);
+       }
+   catch(err){
+alert(err.message);}  */
+
+                  
+  }
+  
+  /*
+function fct(){ 
+                 var listoffiles='';
+                 var filenamepubindex='pubindex.txt';
+  blockstack.listFiles((filename)=>{listoffiles=listoffiles+filename+'X';
+   var str = listoffiles.toString();
+      var listpost = str.split('X');
+      var i;
+      var j;
+      var strr='';
+for (i = 0; i < listpost.length; i++) {
+  var post = listpost[i];
+        if (post[5] =='u') {
+          strr = strr + listpost[i] + '</br>';
+          }
+}   
+    blockstack.putFile(filenamepubindex, strr, {encrypt: false });
+    document.getElementById("global").innerHTML=strr                        
+         return true})
+  
+    }
+ */
+ 
+//******************************************************** DELETE A POST ******************************************************
+ function deletef(){
+              
+  var filetodelete=document.getElementById("posttodelete").value;
+  try{ blockstack.deleteFile(filetodelete,{wasSigned: false})}
+ catch(err){alert(err.message);}
+ }
+  
+//******************************************************** DELETE ALL ******************************************************
+  function deleteall(){
+     var listoffiles='';
+  blockstack.listFiles((filename)=>{listoffiles=listoffiles+filename+'X';
+   var str = listoffiles.toString();
+      var listpost = str.split('X');
+      var i;
+for (i = 0; i < listpost.length; i++) {
+  var filetodelete = listpost[i];
+  blockstack.deleteFile(filetodelete,{wasSigned: false}) 
+} 
+return true})
+ }
+ 
+ //******************************************************** OTHER CONTENT ****************************************************** 
+   async function othercontent(){ 
+     
+  var p='PUB_index';
+  var id=document.getElementById("idother").value;
+  try{var t= await blockstack.getFile(p, { username: id, decrypt: false });
+      //var str = t.toString();
+      var listpost = t.split('X');
+      //var listpost = t.split(/\n/);
+      var i;
+      var str='';
+for (i = 0; i < listpost.length; i++) {
+  var x= await blockstack.getFile(listpost[i], { username: id, decrypt: false });
+  if(x==null){str=str;}
+  else{str += listpost[i] +"==>"+ x + "<br>";}
+}
+   document.getElementById("othercontent").innerHTML=str;
+   //document.getElementById("othercontentpost").innerHTML=x;
+        }
+    catch(err){
+     alert(err.message);}
+     }
+     
+     
+ async function showof(){ 
+  
+  var p=document.getElementById("posttoshowo").value;
+  var id=document.getElementById("idother").value;
+  try{var t= await blockstack.getFile(p, { username: id, decrypt: false });
+   document.getElementById("posteo").innerHTML=t;
+        }
+    catch(err){
+     alert(err.message);}
+}
+ function affiche(){
+  let options = {
+  encrypt: false
+}
+try{document.getElementById("note").innerHTML='bbbb';}
+catch(err){
+     alert(err.message);}
+ }
+ 
+</script>
+
+
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -28,11 +343,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <a href="#" class="w3-bar-item w3-button">third</a>
     </div>
   </div>
+
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
     <img src="images/avatar3.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
   </a>
+
+  
   <a class="w3-right">
-  <input class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center" type="button" value="login" id="sout" onclick="signin();" />
+    <p id="state"> <script>issigin();</script> </p>
+    </a>
+  <a class="w3-right">
+  <input class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center" type="button" value="sign in" id="sig" onclick="signin();" />
   </a>
   <a class="w3-right">
   <input class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center" type="button" value="sign out" id="sout" onclick="sigout();" />
@@ -145,7 +466,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
               <h6 class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
-                        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" cols="88" ></textarea>
+                        <textarea class="form-control z-depth-1" id="postpub" rows="3" cols="88" ></textarea>
                     </div><!-- end form-group -->
 
                     <form action="" method="post">
@@ -153,7 +474,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                       <input type="radio" name="joke" value="private" /> Private
                    </form>
 
-              <button type="button" class="w3-button w3-theme"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</button> 
+              <button type="button" class="w3-button w3-theme" id="sharepub" onclick="sharepub();"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</button> 
 
 
 
@@ -169,7 +490,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <span class="w3-right w3-opacity">16 min</span>
         <h4>ZAIDI Yahia</h4><br>
         <hr class="w3-clear">
-        <p>Ceci est notre projet de réseau social décentralisé basé sur la technologie Blockchain, sur la platforme Blockstack !</p>
+        <p id="pubcontent">Ceci est notre projet de réseau social décentralisé basé sur la technologie Blockchain, sur la platforme Blockstack ! <script>pubcontent();</script></p>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i><img src="images/like.png" style="height:21px;width:21px"></i>  Like</button> 
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i><img src="images/comment.png" style="height:21px;width:21px"></i>  Comment</button> 
       </div>  
