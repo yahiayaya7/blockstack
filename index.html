@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<title>Blockstack App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/style3.css">
+<link rel="stylesheet" href="css/style4.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i></i></a>
+  <a href="#" class="w3-bar-item  w3-padding-large "><i></i> <img src="images/logo.png" style="height:30px;width:50px"> </a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large" title="Home"><i><img src="images/home.png" style="height:27px;width:27px"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large" title="Account Settings"><i> <img src="images/settings.png" style="height:27px;width:27px"> </i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large" title="Messages"><i><img src="images/msg.png" style="height:27px;width:27px"></i></a>
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><img src="images/notif.png" style="height:27px;width:27px"><i></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-button">first notif</a>
+      <a href="#" class="w3-bar-item w3-button">seconde notif</a>
+      <a href="#" class="w3-bar-item w3-button">third</a>
+    </div>
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    <img src="images/avatar3.png" class="w3-circle" style="height:30px;width:30px" alt="Avatar">
+  </a>
+  <a class="w3-right">
+  <input class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center" type="button" value="login" id="sout" onclick="signin();" />
+  </a>
+  <a class="w3-right">
+  <input class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center" type="button" value="sign out" id="sout" onclick="sigout();" />
+  </a>
+  <a class="w3-right">
+  <input class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="height:50px;width:250px;" type="text" class="form-control" placeholder="search">
+  </a>
+
+ </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i><img src="images/id.png" style="height:21px;width:21px"></i> yahia7yaya.id.blockstack</p>
+         <p><i><img src="images/name.png" style="height:25px;width:25px"></i> ZAIDI Yahia</p>
+         <p><i> <img src="images/birthday.png" style="height:20px;width:20px"></i> August 22, 1995</p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Accordion -->
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i><img src="images/group.png" style="height:21px;width:21px"> </i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Group 1</p>
+            <p>Group 2</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i><img src="images/amis.png" style="height:21px;width:21px"></i> My Followed</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Dadoun Amayasse</p>
+            <p>Lyes Badis</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i><img src="images/img.png" style="height:20px;width:20px"> </i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container"> 
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      <!-- Interests --> 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Réservé...<br>...............</p>
+          <p>
+
+          </p>
+        </div>
+      </div>
+      <br>
+      
+      <!-- Alert Box -->
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i><img src="images/x.png" style="height:10px;width:10px"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Publish some interesting content</p>
+      </div>
+    
+    <!-- End Left Column -->
+    </div>
+    
+    <!-- Middle Column -->
+    <div class="w3-col m7">
+    
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h6 class="w3-opacity">Publish some text</h6>
+
+                    <div class="form-group purple-border" >
+                        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" cols="88" ></textarea>
+                    </div><!-- end form-group -->
+
+                    <form action="" method="post">
+                      <input type="radio" name="joke" value="public" /> Public
+                      <input type="radio" name="joke" value="private" /> Private
+                   </form>
+
+              <button type="button" class="w3-button w3-theme"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</button> 
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <img src="images/avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <span class="w3-right w3-opacity">16 min</span>
+        <h4>ZAIDI Yahia</h4><br>
+        <hr class="w3-clear">
+        <p>Ceci est notre projet de réseau social décentralisé basé sur la technologie Blockchain, sur la platforme Blockstack !</p>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i><img src="images/like.png" style="height:21px;width:21px"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i><img src="images/comment.png" style="height:21px;width:21px"></i>  Comment</button> 
+      </div>  
+
+
+      
+    <!-- End Middle Column -->
+    </div>
+    
+    <!-- Right Column -->
+
+    <!-- Navbar on small screens -->
+    <div class="w3-col m2">
+
+      <!--
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Upcoming Events:</p>
+          <img src="images/forest.jpg" alt="Forest" style="width:100%;">
+          <p><strong>Holiday</strong></p>
+          <p>Friday 15:00</p>
+          <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
+        </div>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+          <p>Friend Request</p>
+          <img src="images/avatar6.png" alt="Avatar" style="width:50%"><br>
+          <span>Jane Doe</span>
+          <div class="w3-row w3-opacity">
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+            </div>
+            <div class="w3-half">
+              <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      -->
+      
+      <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
+        <p>...</p>
+      </div>
+      <br>
+      
+      <div class="w3-card w3-round w3-white w3-padding-32 w3-center">
+        <p><i class="fa fa-bug w3-xxlarge"></i></p>
+      </div>
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-d3 w3-padding-16">
+  <h5>Contact...</h5>
+</footer>
+
+<footer class="w3-container w3-theme-d5">
+  <p>Blockstack Application Copyright &copy; 2020, All Rights Reserved.</p>
+</footer>
+ 
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else { 
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html> 
