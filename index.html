@@ -222,7 +222,7 @@ alert(err.message);
               commentButton.appendChild(commentImage);
 
             
-              
+              var container = document.getElementById("pubs");
 
               
 
@@ -241,9 +241,10 @@ alert(err.message);
         
          
           
-        
+          container.appendChild(pubDiv);
 
-        document.body.appendChild(pubDiv);
+          document.body.appendChild(container);
+
 
         }
   
@@ -550,6 +551,10 @@ catch(err){
         </div>
       </div>
       
+
+      <div id="pubs">
+        
+      </div>
 
        <!-- 
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
