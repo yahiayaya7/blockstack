@@ -179,7 +179,7 @@ alert(err.message);
       var i;
       var str='';
       for (i = 0; i < listpost.length; i++) {
-  
+        str='';
       var x= await blockstack.getFile(listpost[i], {decrypt: false });
       if(x==null){
         str=str;
