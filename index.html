@@ -189,23 +189,23 @@ alert(err.message);
           var pubDiv = document.createElement("div");
           var image = document.createElement("img");
           image.src = "images/avatar3.png";
-          image.className ="y-image";     
-          //image.style ="width:60px;";
+          image.className ="w3-left w3-circle w3-margin-right";
+          image.style ="width:60px;";
           
           var span = document.createElement("span");
-          span.className="y-span";  
+          span.className="w3-right w3-opacity";
 
           var line = document.createElement("hr");
-          line.className="y-line";             
+          line.className="w3-clear";
           
 
           var likeButton = document.createElement("button");
-          likeButton.className="like-button like-theme-d1 like-margin-bottom";    
-
+          likeButton.className="w3-button w3-theme-d1 w3-margin-bottom";
+          
 
         
           var commentButton = document.createElement("button");
-          commentButton.className="comment-button comment-theme-d1 comment-margin-bottom"; 
+          commentButton.className="w3-button w3-theme-d1 w3-margin-bottom";
          
 
            var likeImage = document.createElement("img");
@@ -221,15 +221,12 @@ alert(err.message);
               likeButton.appendChild(likeImage);
               commentButton.appendChild(commentImage);
 
-              var container = document.getElementById("pubs");
-
             
               
 
               
 
-          pubDiv.className="pubdiv-container pubdiv-card pubdiv-white pubdiv-round pubdiv-margin";  
-                                                                         
+          pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("p");
         
           content.innerHTML=str;
@@ -246,10 +243,7 @@ alert(err.message);
           
         
 
-        
-        container.appendChild(pubDiv);
-
-        document.body.appendChild(container);
+        document.body.appendChild(pubDiv);
 
         }
   
@@ -556,10 +550,6 @@ catch(err){
         </div>
       </div>
       
-
-      <div id="pubs">
-
-      </div>
 
        <!-- 
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
