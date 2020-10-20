@@ -178,14 +178,14 @@ alert(err.message);
       var listpost = t.split('X');
       var i;
       var str='';
-for (i = 0; i < listpost.length; i++) {
+      for (i = 0; i < listpost.length; i++) {
   
-    var x= await blockstack.getFile(listpost[i], {decrypt: false });
+      var x= await blockstack.getFile(listpost[i], {decrypt: false });
       if(x==null){
         str=str;
         }
         else{
-          str += listpost[i] +"==>"+ x + "<br>";
+          str += x;
           var pubDiv = document.createElement("div");
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("p");
@@ -195,9 +195,10 @@ for (i = 0; i < listpost.length; i++) {
         pubDiv.appendChild(content);
         body.appendChild(pubDiv);
 
-        //  document.getElementById("pubcontent").innerHTML=str;}
+          //  document.getElementById("pubcontent").innerHTML=str;}
         }
-   //document.getElementById("pubcontent").innerHTML=str;
+          //document.getElementById("pubcontent").innerHTML=str;
+        }
         }
     catch(err){
      alert(err.message);}
