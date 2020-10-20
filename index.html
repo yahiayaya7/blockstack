@@ -211,7 +211,7 @@ alert(err.message);
            likeImage.src ="images/like.png";
            likeImage.style="height:21px;width:21px";
 
-           var  commentImage = document.createElement("img");
+           var commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
               commentImage.style="height:21px;width:21px";
 
@@ -227,11 +227,11 @@ alert(err.message);
           var content = document.createElement("p");
         
           content.innerHTML=str;
-pubDiv.append(likeButton,commentButton,span,line,image,content);
+          pubDiv.append(span,line,image,content,likeButton,commentButton);
         
-var container = document.createElement("div");
-container.className="w3-col m7";
-container.appendChild(pubDiv);
+          var container = document.createElement("div");
+          container.className="w3-col m7";
+          container.appendChild(pubDiv);
 
         document.body.appendChild(container);
 
