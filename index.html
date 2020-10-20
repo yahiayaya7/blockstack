@@ -221,17 +221,23 @@ alert(err.message);
               likeButton.appendChild(likeImage);
               commentButton.appendChild(commentImage);
 
-              
+              var container = document.createElement("div");
+              container.className="w3-col m7";
 
 
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("p");
         
           content.innerHTML=str;
-          pubDiv.append(image,span,line,content,likeButton,commentButton);
+          pubDiv.appendChild(image);
+          pubDiv.appendChild(span);
+          pubDiv.appendChild(line);
+          pubDiv.appendChild(content);
+          pubDiv.appendChild(likeButton);
+          pubDiv.appendChild(commentButton);
         
-          var container = document.createElement("div");
-          container.className="w3-col m7";
+         
+          
           container.appendChild(pubDiv);
 
         document.body.appendChild(container);
