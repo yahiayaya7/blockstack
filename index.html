@@ -187,31 +187,31 @@ alert(err.message);
         else{
           str = x;
           var pubDiv = document.createElement("div");
-          var image = createElement("img");
+          var image = document.createElement("img");
           image.src = "images/avatar3.png";
           image.className ="w3-left w3-circle w3-margin-right";
           image.style ="width:60px;" ;
           
-          var span = createElement("span");
+          var span = document.createElement("span");
           span.className="w3-right w3-opacity";
 
-          var line = createElement("hr");
+          var line = document.createElement("hr");
           line.className="w3-clear";
 
-          var likeButton = createElement("input");
+          var likeButton = document.createElement("input");
           likeButton.className="w3-button w3-theme-d1 w3-margin-bottom";
           likeButton.type="submit";
 
         
-          var commentButton = createElement("input");
+          var commentButton = document.createElement("input");
           commentButton.className="w3-button w3-theme-d1 w3-margin-bottom";
           commentButton.type="submit";
 
-           var likeImage = createElement("img");
+           var likeImage = document.createElement("img");
            likeImage.src ="images/like.png";
            likeImage.style="height:21px;width:21px";
 
-           var  commentImage = createElement("img");
+           var  commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
               commentImage.style="height:21px;width:21px";
 
