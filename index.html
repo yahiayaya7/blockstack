@@ -187,17 +187,56 @@ alert(err.message);
         else{
           str = x;
           var pubDiv = document.createElement("div");
+          var image = createElement("img");
+          image.src = "images/avatar3.png";
+          image.className ="w3-left w3-circle w3-margin-right";
+          image.style ="width:60px;" ;
+          
+          var span = createElement("span");
+          span.className="w3-right w3-opacity";
+
+          var line = createElement("hr");
+          line.className="w3-clear";
+
+          var likeButton = createElement("input");
+          likeButton.className="w3-button w3-theme-d1 w3-margin-bottom";
+          likeButton.type="submit";
+
+        
+          var commentButton = createElement("input");
+          commentButton.className="w3-button w3-theme-d1 w3-margin-bottom";
+          commentButton.type="submit";
+
+           var likeImage = createElement("img");
+           likeImage.src ="images/like.png";
+           likeImage.style="height:21px;width:21px";
+
+           var  commentImage = createElement("img");
+              commentImage.src ="images/comment.png";
+              commentImage.style="height:21px;width:21px";
+
+
+
+              likeButton.appendChild(likeImage);
+              commentButton.appendChild(commentImage);
+
+              
+
+
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("p");
-        //  content.id="pubcontent";
+        
           content.innerHTML=str;
+pubDiv.append(likeButton,commentButton,span,line,image,content);
+        
+var container = createElement("div");
+container.className="w3-col m7";
+container.appendChild(pubDiv);
 
-        pubDiv.appendChild(content);
-        document.body.appendChild(pubDiv);
+        document.body.appendChild(container);
 
-          //  document.getElementById("pubcontent").innerHTML=str;}
         }
-          //document.getElementById("pubcontent").innerHTML=str;
+  
         }
         }
     catch(err){
