@@ -221,7 +221,7 @@ alert(err.message);
               likeButton.appendChild(likeImage);
               commentButton.appendChild(commentImage);
 
-              var container = document.getElementById("container");
+              var container = document.getElementsByClassName("w3-col m7");
               
 
               
@@ -241,7 +241,7 @@ alert(err.message);
         
          
           
-          container.appendChild(pubDiv);
+          document.body.container.appendChild(pubDiv);
 
         document.body.appendChild(container);
 
@@ -500,7 +500,7 @@ catch(err){
       </div>
       <br>
       
-      <!-- Interests --> 
+      <!-- Interests 
       <div class="w3-card w3-round w3-white w3-hide-small">
         <div class="w3-container">
           <p>Réservé...<br>...............</p>
@@ -508,7 +508,7 @@ catch(err){
 
           </p>
         </div>
-      </div>
+      </div>--> 
       <br>
       
       <!-- Alert Box -->
@@ -524,7 +524,7 @@ catch(err){
     </div>
     
     <!-- Middle Column -->
-    <div class="w3-col m7" id="container">
+    <div class="w3-col m7">
     
       <div class="w3-row-padding">
         <div class="w3-col m12">
@@ -551,7 +551,7 @@ catch(err){
       </div>
       
 
-      
+       <!-- 
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="images/avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">16 min</span>
@@ -561,7 +561,7 @@ catch(err){
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i><img src="images/like.png" style="height:21px;width:21px"></i>  Like</button> 
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i><img src="images/comment.png" style="height:21px;width:21px"></i>  Comment</button> 
       </div>  
-      <!-- 
+     
       <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="images/avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
         <span class="w3-right w3-opacity">2 min</span>
@@ -571,13 +571,13 @@ catch(err){
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i><img src="images/like.png" style="height:21px;width:21px"></i>  Like</button> 
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i><img src="images/comment.png" style="height:21px;width:21px"></i>  Comment</button> 
       </div> -->
-  
+    <!-- End Middle Column -->
+  </div>
      
 
 
       
-      <!-- End Middle Column -->
-    </div>
+    
     
     <!-- Right Column -->
 
