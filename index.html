@@ -190,7 +190,7 @@ alert(err.message);
           var image = document.createElement("img");
           image.src = "images/avatar3.png";
           image.className ="w3-left w3-circle w3-margin-right";
-          image.style ="width:60px;" ;
+          image.style ="width:60px;";
           
           var span = document.createElement("span");
           span.className="w3-right w3-opacity";
@@ -224,13 +224,16 @@ alert(err.message);
               var container = document.createElement("div");
               container.className="w3-col m7";
 
+              var saute = document.createElement("br");
 
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("p");
         
           content.innerHTML=str;
+          pubDiv.appendChild(saute);
           pubDiv.appendChild(image);
           pubDiv.appendChild(span);
+          pubDiv.appendChild(saute);
           pubDiv.appendChild(line);
           pubDiv.appendChild(content);
           pubDiv.appendChild(likeButton);
