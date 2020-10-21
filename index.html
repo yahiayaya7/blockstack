@@ -226,7 +226,7 @@ alert(err.message);
 
               
 
-          pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
+          pubDiv.className="w3-container w3-card w3-white w3-round w3-margin w3-padding";
           var content = document.createElement("p");
         
           content.innerHTML=str;
@@ -538,8 +538,8 @@ catch(err){
                     </div><!-- end form-group -->
 
                     <form action="" method="post">
-                      <input type="radio" name="joke" value="public" /> Public
-                      <input type="radio" name="joke" value="private" /> Private
+                      <input type="radio" name="joke" id="public" value="public" /> Public
+                      <input type="radio" name="joke" id="private" value="private" /> Private
                    </form>
 
               <button type="button" class="w3-button w3-theme" id="sharepub" onclick="sharepub();"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</button> 
