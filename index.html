@@ -196,8 +196,8 @@ alert(err.message);
           span.className="w3-right w3-opacity";
 
           var line = document.createElement("hr");
-          line.className="w3-clear w-margin-top";
-          
+          line.className="w3-clear";
+		  line.style="margin-top:25px;";
 
           var likeButton = document.createElement("button");
           likeButton.className="w3-button w3-theme-d1 w3-margin-bottom";
@@ -234,7 +234,7 @@ alert(err.message);
           pubDiv.appendChild(image);
           pubDiv.appendChild(span);
           
-          image.appendChild(line);
+          pubDiv.appendChild(line);
           pubDiv.appendChild(content);
           pubDiv.appendChild(likeButton);
           pubDiv.appendChild(commentButton);
