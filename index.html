@@ -81,7 +81,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     if (public.toString() == 'true'){
       var filenamepub='PUBLIC_'+dd;
       blockstack.putFile(filenamepub, tpost, {encrypt: false});
-      document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepub, {encrypt: false});
+      //document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepub, {encrypt: false});
       
       {  var listoffilespub='';
       var filenamepubindex='PUB_index';
@@ -106,7 +106,7 @@ for (i = 0; i < listpostpub.length; i++) {
     else if (private.toString() == 'true'){
       var filenamepriv='PRIVATE_'+dd;
       blockstack.putFile(filenamepriv, tpost, {encrypt: true});
-      document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepriv, {encrypt: true});
+      //document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepriv, {encrypt: true});
       
          {  var listoffilespriv='';
       var filenameprivindex='PRIV_index';
@@ -376,7 +376,7 @@ catch(err){
          <h4 class="w3-center">My Profile</h4>
          <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
-         <p ><i><img src="images/id.png" style="height:21px;width:21px"></i> <strong>ID: </strong><script>showid();</script><i id="showid"></i> </p>
+         <p ><i><img src="images/id.png" style="height:21px;width:21px"></i> <script>showid();</script><h4 id="showid"></h4> </p>
          <p><i><img src="images/name.png" style="height:25px;width:25px"></i> ZAIDI Yahia</p>
          <p><i> <img src="images/birthday.png" style="height:20px;width:20px"></i> August 22, 1995</p>
         </div>
@@ -543,7 +543,7 @@ catch(err){
       -->
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>...4</p>
+        <p>...5</p>
       </div>
       <br>
       
