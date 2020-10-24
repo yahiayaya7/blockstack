@@ -374,9 +374,9 @@ catch(err){
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></div>
+         <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
-         <div><i><img src="images/id.png" style="height:21px;width:21px"></i><div id="showid"><script>showid();</script></div> </p>
+         <p id="showid"><i><img src="images/id.png" style="height:21px;width:21px"></i> <strong>ID: </strong><script>showid();</script> </p>
          <p><i><img src="images/name.png" style="height:25px;width:25px"></i> ZAIDI Yahia</p>
          <p><i> <img src="images/birthday.png" style="height:20px;width:20px"></i> August 22, 1995</p>
         </div>
@@ -457,12 +457,12 @@ catch(err){
               <h6 class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
-                        <input class="form-control z-depth-1" align="center" type="text" name="post" id="postshare" rows="3" cols="88" required>
+                        <textarea class="form-control z-depth-1" align="center" type="text" name="post" id="postshare" rows="3" cols="88"></textarea>
                         
                         <input type="radio" id="public" name="post" value="public" /> Public
                         <input type="radio" id="private" name="post" value="private" /> Private
                 </br>
-              <button type="button" class="w3-button w3-theme" name="post" id="share" onclick="share();"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</button> 
+              <input type="button" class="w3-button w3-theme" name="post" id="share" onclick="share();"><i><img src="images/post.png" style="height:21px;width:21px"></i>  Post</input> 
                     </div><!-- end form-group -->
 
 
