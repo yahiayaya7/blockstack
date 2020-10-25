@@ -16,7 +16,7 @@
 }
 
 /* Set a style for all buttons */
-buttoninfo {
+.buttoninfo {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -27,7 +27,7 @@ buttoninfo {
   opacity: 0.9;
 }
 
-buttoninfo:hover {
+.buttoninfo:hover {
   opacity:1;
 }
 
