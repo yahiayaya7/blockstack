@@ -167,7 +167,9 @@ alert(err.message);}
        //   line.className="w3-clear";
        line.style="margin-top:80px;";
 
-     
+       var line2 = document.createElement("hr");
+       //   line.className="w3-clear";
+       line2.style="";
 		
           var likeButton = document.createElement("button");
           likeButton.className="w3-button w3-margin-bottom ";
@@ -183,7 +185,7 @@ alert(err.message);}
    
            var likeImage = document.createElement("img");
            likeImage.src ="images/like.png";
-           likeImage.style="height:21px;width:21px;";
+           likeImage.style="height:21px;width:21px; border : 1 px solid black;border-radius:50px;";
 
            var commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
@@ -208,13 +210,16 @@ alert(err.message);}
         
           content.innerHTML=str;
           
+          
+
+
           pubDiv.appendChild(image);
 		  
           pubDiv.appendChild(span);
            pubDiv.appendChild(line);
           
           pubDiv.appendChild(content);
-		 
+          pubDiv.appendChild(line2);
           pubDiv.appendChild(likeButton);
 		
           pubDiv.appendChild(commentButton);
