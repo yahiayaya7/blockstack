@@ -168,14 +168,14 @@ alert(err.message);}
        line.style="margin-top:80px;";
 		
           var likeButton = document.createElement("button");
-          likeButton.className="w3-button w3-theme-d1 w3-margin-bottom";
-          likeButton.textContent="Like ";
+          likeButton.className="w3-button w3-theme-d1 w3-margin";
+         
           likeButton.style="color :white;";
 
         
           var commentButton = document.createElement("button");
-          commentButton.className="w3-button w3-theme-d1 w3-margin-bottom";
-          commentButton.textContent = "Comment ";
+          commentButton.className="w3-button w3-theme-d1 w3-margin";
+         
           commentButton.style = "color : white;";
          
 
@@ -190,8 +190,9 @@ alert(err.message);}
 
 
               likeButton.appendChild(likeImage);
+              likeButton.textContent=" Like ";
               commentButton.appendChild(commentImage);
-
+              commentButton.textContent = " Comment ";
             
               var container = document.getElementById("pubs");
 
@@ -547,7 +548,7 @@ catch(err){
       -->
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p>...12</p>
+        <p>...13</p>
       </div>
       <br>
       
