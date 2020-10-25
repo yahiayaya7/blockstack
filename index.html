@@ -207,7 +207,7 @@ alert(err.message);}
 
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
           var content = document.createElement("textarea");
-            content.style="width : 700px;";
+            content.style="width : 730px; resize: none;";
           content.innerHTML=str;
           
           
@@ -472,7 +472,7 @@ catch(err){
               <h6 class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
-                        <textarea class="form-control z-depth-1" align="center" type="text" name="post" id="postshare" rows="3" cols="88"></textarea>
+                        <textarea style="resize: none;" class="form-control z-depth-1" align="center" type="text" name="post" id="postshare" rows="3" cols="88"></textarea>
                         
                         <input type="radio" id="public" name="post" value="public" /> Public
                         <input type="radio" id="private" name="post" value="private" /> Private
