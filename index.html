@@ -191,11 +191,11 @@ alert(err.message);}
 
               var i = document.createElement("i");
                 i.append(likeImage)
-
+                likeButton.textContent=" Like ";
               likeButton.appendChild(i);
-              likeButton.textContent=" Like ";
-              commentButton.appendChild(commentImage);
               commentButton.textContent = " Comment ";
+              commentButton.appendChild(commentImage);
+             
             
               var container = document.getElementById("pubs");
 
