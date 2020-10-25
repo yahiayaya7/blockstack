@@ -1,6 +1,6 @@
 
 /* Full-width input fields */
-inputinfo[type=text], inputinfo[type=password] {
+.inputinfo[type=text], .inputinfo[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -10,13 +10,13 @@ inputinfo[type=text], inputinfo[type=password] {
 }
 
 /* Add a background color when the inputs get focus */
-inputinfo[type=text]:focus, inputinfo[type=password]:focus {
+.inputinfo[type=text]:focus, .inputinfo[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Set a style for all buttons */
-cancelbtn {
+buttoninfo {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -27,7 +27,7 @@ cancelbtn {
   opacity: 0.9;
 }
 
-cancelbtn:hover {
+buttoninfo:hover {
   opacity:1;
 }
 
