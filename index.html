@@ -182,18 +182,20 @@ alert(err.message);}
          
    
            var likeImage = document.createElement("img");
-           likeImage.src ="images/like.png";
+           likeImage.src ="";
            likeImage.style="height:21px;width:21px;";
 
            var commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
               commentImage.style="height:21px;width:21px;";
 
-              var i = document.createElement("i");
-                i.append(likeImage)
-                likeButton.textContent=" Like ";
-              likeButton.appendChild(i);
-              commentButton.textContent = " Comment ";
+       
+               
+                likeButton.textContent=" Like "+'<img src="images/like.png" />';
+                commentButton.textContent = " Comment ";
+
+
+             // likeButton.appendChild(likeImage);
               commentButton.appendChild(commentImage);
              
             
