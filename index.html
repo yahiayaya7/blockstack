@@ -202,7 +202,8 @@ alert(err.message);}
              
             
               var container = document.getElementById("pubs");
-
+              var name = document.createElement("h4");
+              name.textContent=" ZAIDI YAHIA";
               
 
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
@@ -216,7 +217,7 @@ alert(err.message);}
 
 
           pubDiv.appendChild(image);
-		  
+		      pubDiv.appendChild(name);
           pubDiv.appendChild(span);
            pubDiv.appendChild(line);
           
