@@ -420,7 +420,7 @@ catch(err){
       <p>Please fill in this form to complete your profile informations</p>
       <hr class="hrinfo">
       <label for="email"><b>Full name :</b></label>
-      <input class="inputinfo w3-card" type="text" id="name" placeholder="Enter your first and last name" name="info" required>
+      <input class="inputinfo w3-card" type="text" id="name" placeholder="Enter your first and last name" name="info" maxlength="30" required>
 
       <label for="email"><b>Birthday :</b></label><br/>
       <input class="inputinfo w3-card" type="date" id="birthday" name="info" required><br/><br/>
@@ -547,7 +547,7 @@ catch(err){
               <h6 class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
-                        <textarea style="resize: none;border-radius: 10px; border: none; width: 100%" class="w3-card" align="center" type="text" name="post" id="postshare" rows="3" cols="88"></textarea>
+                        <textarea style="resize: none;border-radius: 10px; border: none; width: 100%" class="w3-card" align="center" type="text" name="post" id="postshare" rows="3" cols="88" required></textarea>
                         <br>
                         <input type="radio" id="public" name="post" value="public" /> Public
                         <input type="radio" id="private" name="post" value="private" /> Private
