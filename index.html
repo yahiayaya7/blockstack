@@ -197,35 +197,38 @@ alert(err.message);}
        var line2 = document.createElement("hr");
        //   line.className="w3-clear";
        line2.style="margin-top:10px; margin-bottom:5px;";
+
 		
           var likeButton = document.createElement("button");
           likeButton.className="w3-button w3-margin-bottom ";
           likeButton.style="color :white;";
           likeButton.title="Like";
 
+            var likeImage = document.createElement("img");
+            likeImage.src ="images/like.png";
+            likeImage.style="height:21px;width:21px;";
+
+
+
           var dislikeButton = document.createElement("button");
           dislikeButton.className="w3-button w3-margin-bottom ";
           dislikeButton.style="color :white;margin-left:5px;";
           dislikeButton.title="disLike";
 
+            var dislikeImage = document.createElement("img");
+            likeImage.src ="images/dislike.png";
+            likeImage.style="height:21px;width:21px;margin-left:5px;";
+
         
+
           var commentButton = document.createElement("button");
           commentButton.className="w3-button w3-margin-bottom";
           commentButton.style = "color : white;margin-left:5px;";
           commentButton.title="Comment";
-         
-   
-           var likeImage = document.createElement("img");
-           likeImage.src ="images/like.png";
-           likeImage.style="height:21px;width:21px;";
 
-           var dislikeImage = document.createElement("img");
-           likeImage.src ="images/dislike.png";
-           likeImage.style="height:21px;width:21px;";
-
-           var commentImage = document.createElement("img");
+            var commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
-              commentImage.style="height:21px;width:21px;";
+              commentImage.style="height:21px;width:21px;margin-left:5px;";
 
        
                
