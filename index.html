@@ -200,14 +200,14 @@ alert(err.message);}
 		
           var likeButton = document.createElement("button");
           likeButton.className="w3-button w3-margin-bottom ";
-         
           likeButton.style="color :white;";
+          likeButton.title="Like";
 
         
           var commentButton = document.createElement("button");
           commentButton.className="w3-button w3-margin-bottom";
-         
           commentButton.style = "color : white;margin-left:5px;";
+          commentButton.title="Comment";
          
    
            var likeImage = document.createElement("img");
@@ -486,8 +486,14 @@ catch(err){
             <p>Dadoun Amayasse</p>
             <p>Lyes Badis</p>
           </div>
+          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i><img src="images/amis.png" style="height:21px;width:21px"></i> Create Group</button>
+          <div id="Demo4" class="w3-hide w3-container">
+            <p>Dadoun Amayasse</p>
+            <p>Lyes Badis</p>
+          </div>
           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i><img src="images/img.png" style="height:20px;width:20px"> </i> My Photos</button>
           <div id="Demo3" class="w3-hide w3-container"> 
+
          <div class="w3-row-padding">
          <br>
            <div class="w3-half">
