@@ -179,7 +179,7 @@ alert(err.message);}
       var listpost='';
       var x='';
 
-      for (i = 0; i < listposts.length; i++) {
+     /* for (i = 0; i < listposts.length; i++) {
         var post1 = listposts[i];
         var post2 = listposts[i+1];
         var post1str = post1.toString();
@@ -196,15 +196,17 @@ alert(err.message);}
           listpost = listpost + listposts[i+1];
         }
       }
-      document.getElementById("test1").innerHTML=listpost;
-      for (i = listpost.length; i >= 0; i--) {
+      document.getElementById("test1").innerHTML=listpost;*/
+      for (i = listposts.length; i >= 0; i--) {
         str='';
-      var x1= await blockstack.getFile(listpost1[i], {decrypt: false });
-      var x2= await blockstack.getFile(listpost2[i], {decrypt: true});
-      if( (listpost[i])[5]=='C' ){
+      
+      
+      if( (listposts[i])[5]=='C' ){
+        var x1= await blockstack.getFile(listpost1[i], {decrypt: false });
         x=x1;
       }
-      else if( (listpost[i])[5]=='T' ){
+      else if( (listposts[i])[5]=='T' ){
+        var x2= await blockstack.getFile(listpost2[i], {decrypt: true});
         x=x2;
       }
 
