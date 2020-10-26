@@ -173,7 +173,7 @@ alert(err.message);}
       var t2= await blockstack.getFile(p2, {decrypt: true });
       var listpost1 = t1.split('X');
       var listpost2 = t2.split('X');
-      var listposttout = t1 + 'X' + t2;
+      var listposttout = t1 + 'X' + t2 +'';
       
       var listposts = listposttout.split('X');
       var i;
@@ -182,7 +182,7 @@ alert(err.message);}
       var x='';
       var j;
 
-      for (i = 0; i < listposts.length-1; i++) {
+      for (i = 0; i < listposts.length; i++) {
         var post1 = listposts[i];
         var post2 = listposts[i+1];
         var post1str = post1.toString();
