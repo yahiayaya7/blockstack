@@ -167,15 +167,37 @@ alert(err.message);}
    //******************************************************** SHOW PUBLIC CONTENT ****************************************************** 
    async function pubcontent(){ 
      
-  var p='PUB_index';
-  try{var t= await blockstack.getFile(p, {decrypt: false });
-      var listpost = t.split('X');
+  var p1='PUB_index';
+  var p2='PRIV_index';
+  try{var t1= await blockstack.getFile(p1, {decrypt: false });
+      var t2= await blockstack.getFile(p2, {decrypt: true });
+      var listpost1 = t1.split('X');
+      var listpost2 = t2.split('X');
+      var listposts = listpost1 + listpost2;
       var i;
       var str='';
-      //for (i = 0; i < listpost.length; i++) {
+      var listpost='';
+      var x='';
+
+      for (i = 0; i < listposts.length; i++) {
+        if( parseInt(listposts[i].slice(-14)) <= parseInt(listposts[i+1].slice(-14))){
+          listpost = listpost + listposts[i];
+        }
+        else{
+          listpost = listpost + listposts[i+1];
+        }
+      }
       for (i = listpost.length; i >= 0; i--) {
         str='';
-      var x= await blockstack.getFile(listpost[i], {decrypt: false });
+      var x1= await blockstack.getFile(listpost1[i], {decrypt: false });
+      var x2= await blockstack.getFile(listpost2[i], {decrypt: true});
+      if( (listpost[i])[5]=='C' ){
+        x=x1;
+      }
+      else if( (listpost[i])[5]=='T' ){
+        x=x2;
+      }
+
       if(x==null){
         str=str;
         }
