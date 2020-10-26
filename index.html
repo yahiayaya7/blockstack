@@ -224,12 +224,16 @@ alert(err.message);}
        
           var deleteButton = document.createElement("button");
           deleteButton.className="w3-button w3-margin-bottom ";
-          deleteButton.style="color :white;margin-left:580px;";
+          deleteButton.style="color :white;margin-left:550px;";
           deleteButton.title="delete";
 
             var deleteImage = document.createElement("img");
             deleteImage.src ="images/delete.png";
             deleteImage.style="height:21px;width:21px;";
+
+          var publicImage = document.createElement("img");
+          publicImage.src ="images/public.png";
+          publicImage.style="height:21px;width:21px;";
                
                 
 
@@ -269,6 +273,7 @@ alert(err.message);}
           
           pubDiv.appendChild(commentButton);
           pubDiv.appendChild(deleteButton);
+          pubDiv.appendChild(publicImage);
         
          
           
