@@ -174,7 +174,6 @@ alert(err.message);}
       var listpost1 = t1.split('X');
       var listpost2 = t2.split('X');
       var listposts = listpost1 + listpost2;
-      document.getElementById("test1").innerHTML=listposts;
       var i;
       var str='';
       var listpost='';
@@ -188,6 +187,7 @@ alert(err.message);}
           listpost = listpost + listposts[i+1];
         }
       }
+      document.getElementById("test1").innerHTML=listpost;
       for (i = listpost.length; i >= 0; i--) {
         str='';
       var x1= await blockstack.getFile(listpost1[i], {decrypt: false });
@@ -631,7 +631,7 @@ catch(err){
         <div class="w3-col m12">
           <div class="w3-card w3-round w3-white">
             <div class="w3-container w3-padding">
-              <h6 class="w3-opacity">Publish some text</h6>
+              <h6 id="test1" class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
                         <textarea style="margin-bottom: 5px; resize: none;border-radius: 10px; border: none; width: 100%" class="w3-card" align="center" type="text" name="post" id="postshare" rows="3" cols="88" required="required"></textarea>
@@ -720,7 +720,7 @@ catch(err){
       -->
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
-        <p id="test1">...16</p>
+        <p>...16</p>
       </div>
       <br>
       
