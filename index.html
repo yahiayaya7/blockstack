@@ -267,6 +267,7 @@ alert(err.message);}
           deleteButton.className="w3-button w3-margin-bottom w3-right";
           deleteButton.style="color :white;";
           deleteButton.title="delete";
+          deleteButton.onclick="deletef(listpost[i]);";
 
             var deleteImage = document.createElement("img");
             deleteImage.src ="images/delete.png";
@@ -284,7 +285,7 @@ alert(err.message);}
             }
             else if( pub[5]=='T' ){
               publicImage.src ="images/private.png";
-              publicImage.style="height:23px;width:23px; margin-left:5px;";
+              publicImage.style="height:23px;width:23px; margin-left:5px; margin-top:3px;";
               publicImage.title="private";
             }
 
@@ -418,10 +419,10 @@ async function creategroup() {
   
  
 //******************************************************** DELETE A POST ******************************************************
- function deletef(){
+ function deletef(posttodelete){
               
-  var filetodelete=document.getElementById("posttodelete").value;
-  try{ blockstack.deleteFile(filetodelete,{wasSigned: false})}
+  //var filetodelete=document.getElementById("posttodelete").value;
+  try{ blockstack.deleteFile(posttodelete,{wasSigned: false})}
  catch(err){alert(err.message);}
  }
   
