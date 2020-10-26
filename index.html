@@ -224,7 +224,7 @@ alert(err.message);}
        
           var deleteButton = document.createElement("button");
           deleteButton.className="w3-button w3-margin-bottom ";
-          deleteButton.style="color :white;margin-left:530px;";
+          deleteButton.style="color :white;margin-left:570px;";
           deleteButton.title="delete";
 
             var deleteImage = document.createElement("img");
@@ -234,7 +234,7 @@ alert(err.message);}
           var publicImage = document.createElement("img");
           publicImage.src ="images/public.png";
           publicImage.style="height:21px;width:21px; margin-left:5px;";
-          publicImage.className="w3-margin-bottom ";
+          publicImage.className="w3-right w3-margin-top";
           publicImage.title="public";
                
                 
@@ -267,6 +267,7 @@ alert(err.message);}
           pubDiv.appendChild(image);
 		      pubDiv.appendChild(name);
           pubDiv.appendChild(span);
+          pubDiv.appendChild(publicImage);
            pubDiv.appendChild(line);
           
           pubDiv.appendChild(content);
@@ -275,7 +276,7 @@ alert(err.message);}
           
           pubDiv.appendChild(commentButton);
           pubDiv.appendChild(deleteButton);
-          pubDiv.appendChild(publicImage);
+          
         
          
           
