@@ -211,14 +211,14 @@ alert(err.message);}
 
 
 
-          /*var dislikeButton = document.createElement("button");
+          var dislikeButton = document.createElement("button");
           dislikeButton.className="w3-button w3-margin-bottom ";
           dislikeButton.style="color :white;margin-left:5px;";
           dislikeButton.title="disLike";
 
             var dislikeImage = document.createElement("img");
             likeImage.src ="images/dislike.png";
-            likeImage.style="height:21px;width:21px;";*/
+            likeImage.style="height:21px;width:21px;";
 
         
 
@@ -238,7 +238,7 @@ alert(err.message);}
 
 
               likeButton.appendChild(likeImage);
-              //dislikeButton.appendChild(dislikeImage);
+              dislikeButton.appendChild(dislikeImage);
               commentButton.appendChild(commentImage);
              
             
@@ -267,7 +267,7 @@ alert(err.message);}
           pubDiv.appendChild(content);
           pubDiv.appendChild(line2);
           pubDiv.appendChild(likeButton);
-          //pubDiv.appendChild(dislikeButton);
+          pubDiv.appendChild(dislikeButton);
           pubDiv.appendChild(commentButton);
         
          
@@ -537,7 +537,7 @@ catch(err){
           <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Create a group</button>
           <div id="Demo4" class="w3-hide w3-container">            
               <input align="center" type="text" class="w3-card" name="creategroup" maxlength="20" style="margin-top: 10px;width: 100%;" placeholder="Choose a name" id="groupname" required><br/>
-              <input align="center" type="button" style="margin-top: 5px;border-radius: 5px;" class="w3-button w3-theme" style="margin-bottom: 5px;margin-left: 50%;" name="creategroup" value="Create" id="creategroup" onclick="creategroup();" /><br/>           
+              <input align="center" type="button" style="margin-top: 5px;border-radius: 5px;margin-bottom: 5px;margin-left: 50%;margin-right: 50%;" class="w3-button w3-theme" name="creategroup" value="Create" id="creategroup" onclick="creategroup();" /><br/>           
               <p id="groupkey"></p> <br/>   
           </div>
           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/img.png" style="height:20px;width:20px"> </i> My Photos</button>
