@@ -203,6 +203,11 @@ alert(err.message);}
           likeButton.style="color :white;";
           likeButton.title="Like";
 
+          var dislikeButton = document.createElement("button");
+          dislikeButton.className="w3-button w3-margin-bottom ";
+          dislikeButton.style="color :white;margin-left:5px;";
+          dislikeButton.title="disLike";
+
         
           var commentButton = document.createElement("button");
           commentButton.className="w3-button w3-margin-bottom";
@@ -212,6 +217,10 @@ alert(err.message);}
    
            var likeImage = document.createElement("img");
            likeImage.src ="images/like.png";
+           likeImage.style="height:21px;width:21px; border : 1 px solid black;border-radius:50px;";
+
+           var dislikeImage = document.createElement("img");
+           likeImage.src ="images/dislike.png";
            likeImage.style="height:21px;width:21px; border : 1 px solid black;border-radius:50px;";
 
            var commentImage = document.createElement("img");
@@ -225,6 +234,7 @@ alert(err.message);}
 
 
               likeButton.appendChild(likeImage);
+              dislikeButton.appendChild(dislikeImage);
               commentButton.appendChild(commentImage);
              
             
