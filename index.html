@@ -183,17 +183,21 @@ alert(err.message);}
       var j;
 
       for (i = 0; i < listposts.length-1; i++) {
-        /*var post1 = listposts[i];
-        var post2 = listposts[i+1];
+        var post1 = listposts[i];
+        var post2 = listposts[j];
+        var post3 = listposts[j-1];
         var post1str = post1.toString();
         var post2str = post2.toString();
+        var post3str = post3.toString();
         var post1slice = post1str.slice(-14);
         var post2slice = post2str.slice(-14);
+        var post3slice = post3str.slice(-14);
         var post1int = parseInt(post1slice);
-        var post2int = parseInt(post2slice);*/
-        var post = parseInt(listposts[i].toString().slice(-14));
+        var post2int = parseInt(post2slice);
+        var post3int = parseInt(post3slice);
+        //var post = parseInt(listposts[i].toString().slice(-14));
         j=i;
-        while(j>0 || parseInt(listposts[j-1].toString().slice(-14)) > post ){
+        while(j>0 || post3int > post1int ){
           listposts[j-1] = listposts[j];
           j=j-1;
         }
