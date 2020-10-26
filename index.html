@@ -274,15 +274,17 @@ alert(err.message);}
 
 
             var publicImage = document.createElement("img");
-            publicImage.style="height:21px;width:21px; margin-left:9px;";
+            
             publicImage.className="w3-right w3-margin-top";
 
             if( pub[5]=='C' ){
               publicImage.src ="images/public.png";
+              publicImage.style="height:21px;width:21px; margin-left:9px;";
               publicImage.title="public";
             }
             else if( pub[5]=='T' ){
               publicImage.src ="images/private.png";
+              publicImage.style="height:23px;width:23px; margin-left:9px;";
               publicImage.title="private";
             }
 
