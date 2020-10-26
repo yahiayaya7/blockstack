@@ -125,7 +125,7 @@ for (i = 0; i < listpostpub.length; i++) {
 }   
     var pubindex = str1 + filenamepub; 
      setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 40);
-    //document.getElementById("global").innerHTML=pubindex                       
+    document.getElementById("global").innerHTML='';                    
          return true})}
      
     }
@@ -150,7 +150,7 @@ for (j = 0; j < listpostpriv.length; j++) {
 }   
     var privindex = str2 + filenamepriv; 
     setTimeout(blockstack.putFile(filenameprivindex, privindex, {encrypt: true }) , 40);
-    //document.getElementById("global").innerHTML=pubindex                       
+    document.getElementById("global").innerHTML='';                    
          return true})}
     } 
       
@@ -286,7 +286,7 @@ alert(err.message);}
             }
             else if( pub[5]=='T' ){
               publicImage.src ="images/private.png";
-              publicImage.style="height:23px;width:23px; margin-left:5px; margin-top:15px;";
+              publicImage.style="height:23px;width:23px; margin-left:5px; margin-top:13px;";
               publicImage.className="w3-right";
               publicImage.title="private";
             }
@@ -668,7 +668,7 @@ catch(err){
               <h6 id="test1" class="w3-opacity">Publish some text</h6>
 
                     <div class="form-group purple-border" >
-                        <textarea style="margin-bottom: 5px; resize: none;border-radius: 10px; border: none; width: 100%" class="w3-card" align="center" type="text" name="post" id="postshare" rows="3" cols="88" required="required"></textarea>
+                        <textarea id="global" style="margin-bottom: 5px; resize: none;border-radius: 10px; border: none; width: 100%" class="w3-card" align="center" type="text" name="post" id="postshare" rows="3" cols="88" required="required"></textarea>
                         <br>
                         <input type="radio" id="public" name="post" value="public" /> Public
                         <input type="radio" style="margin-left: 8px;" id="private" name="post" value="private" /> Private
