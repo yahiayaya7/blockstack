@@ -180,8 +180,8 @@ alert(err.message);}
       var str='';
       var listpost='';
       var x='';
-      document.getElementById("test1").innerHTML=listposts;
-     /* for (i = 0; i < listposts.length; i++) {
+
+      for (i = 0; i < listposts.length; i++) {
         var post1 = listposts[i];
         var post2 = listposts[i+1];
         var post1str = post1.toString();
@@ -198,18 +198,18 @@ alert(err.message);}
           listpost = listpost + listposts[i+1];
         }
       }
-      document.getElementById("test1").innerHTML=listpost;*/
-      for (i = listposts.length-1; i >= 0; i--) {
+      document.getElementById("test1").innerHTML=listpost;
+      for (i = listpost.length-1; i >= 0; i--) {
         str='';
-        pub=listposts[i].toString();
+        pub=listpost[i].toString();
         //document.getElementById("test1").innerHTML=pub;
       
       if( pub[5]=='C' ){
-        var x1= await blockstack.getFile(listposts[i], {decrypt: false });
+        var x1= await blockstack.getFile(listpost[i], {decrypt: false });
         x=x1;
       }
       else if( pub[5]=='T' ){
-        var x2= await blockstack.getFile(listposts[i], {decrypt: true});
+        var x2= await blockstack.getFile(listpost[i], {decrypt: true});
         x=x2;
       }
 
