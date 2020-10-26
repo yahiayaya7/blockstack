@@ -267,7 +267,7 @@ alert(err.message);}
           deleteButton.className="w3-button w3-margin-bottom w3-right";
           deleteButton.style="color :white;";
           deleteButton.title="delete";
-          deleteButton.onclick="deletef(listpost[i]);";
+          deleteButton.onclick=deletef(listpost[i]);
 
             var deleteImage = document.createElement("img");
             deleteImage.src ="images/delete.png";
@@ -276,16 +276,18 @@ alert(err.message);}
 
             var publicImage = document.createElement("img");
             
-            publicImage.className="w3-right w3-margin-top";
+            
 
             if( pub[5]=='C' ){
               publicImage.src ="images/public.png";
               publicImage.style="height:19px;width:19px; margin-left:9px;";
+              publicImage.className="w3-right w3-margin-top";
               publicImage.title="public";
             }
             else if( pub[5]=='T' ){
               publicImage.src ="images/private.png";
               publicImage.style="height:23px;width:23px; margin-left:5px; margin-top:3px;";
+              publicImage.className="w3-right";
               publicImage.title="private";
             }
 
