@@ -180,7 +180,16 @@ alert(err.message);}
       var x='';
 
       for (i = 0; i < listposts.length; i++) {
-        if( parseInt(listposts[i].toString().slice(-14)) <= parseInt(listposts[i+1].toString().slice(-14))){
+        var post1 = listposts[i];
+        var post2 = listposts[i+1];
+        var post1str = post1.toString();
+        var post2str = post2.toString();
+        var post1slice = post1str.slice(-14);
+        var post2slice = post2str.slice(-14);
+        var post1int = parseInt(post1slice);
+        var post2int = parseInt(post2slice);
+
+        if( post1int <= post2int){
           listpost = listpost + listposts[i];
         }
         else{
