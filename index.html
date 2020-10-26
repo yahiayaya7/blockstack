@@ -180,7 +180,7 @@ alert(err.message);}
       var x='';
 
       for (i = 0; i < listposts.length; i++) {
-        if( parseInt(listposts[i].slice(-14)) <= parseInt(listposts[i+1].slice(-14))){
+        if( parseInt(listposts[i].toString().slice(-14)) <= parseInt(listposts[i+1].toString().slice(-14))){
           listpost = listpost + listposts[i];
         }
         else{
