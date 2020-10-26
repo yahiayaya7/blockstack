@@ -178,10 +178,10 @@ alert(err.message);}
       var listposts = listposttout.split('X');
       var i;
       var str='';
-      var listpost=[''];
+      var listpost='';
       var x='';
 
-      for (i = 0; i < listposts.length; i++) {
+      for (i = 0; i < listposts.length-1; i++) {
         var post1 = listposts[i];
         var post2 = listposts[i+1];
         var post1str = post1.toString();
