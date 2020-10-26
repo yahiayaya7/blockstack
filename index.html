@@ -209,17 +209,6 @@ alert(err.message);}
             likeImage.src ="images/like.png";
             likeImage.style="height:21px;width:21px;";
 
-
-
-          var dislikeButton = document.createElement("button");
-          dislikeButton.className="w3-button w3-margin-bottom ";
-          dislikeButton.style="color :white;margin-left:5px;";
-          dislikeButton.title="disLike";
-
-            var dislikeImage = document.createElement("img");
-            likeImage.src ="images/dislike.png";
-            likeImage.style="height:21px;width:21px;";
-
         
 
           var commentButton = document.createElement("button");
@@ -230,16 +219,26 @@ alert(err.message);}
             var commentImage = document.createElement("img");
               commentImage.src ="images/comment.png";
               commentImage.style="height:21px;width:21px;";
+              
 
        
-               
+          var deleteButton = document.createElement("button");
+          deleteButton.className="w3-button w3-margin-bottom ";
+          deleteButton.style="color :white;margin-right:5px;";
+          deleteButton.title="delete";
+
+            var deleteImage = document.createElement("img");
+            deleteImage.src ="images/delete.png";
+            deleteImage.style="height:21px;width:21px;";
                
                 
 
 
               likeButton.appendChild(likeImage);
-              dislikeButton.appendChild(dislikeImage);
+              
               commentButton.appendChild(commentImage);
+
+              deleteButton.appendChild(deleteImage);
              
             
               var container = document.getElementById("pubs");
@@ -267,8 +266,9 @@ alert(err.message);}
           pubDiv.appendChild(content);
           pubDiv.appendChild(line2);
           pubDiv.appendChild(likeButton);
-          pubDiv.appendChild(dislikeButton);
+          
           pubDiv.appendChild(commentButton);
+          pubDiv.appendChild(deleteButton);
         
          
           
