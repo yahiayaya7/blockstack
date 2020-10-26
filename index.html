@@ -199,13 +199,14 @@ alert(err.message);}
       document.getElementById("test1").innerHTML=listpost;*/
       for (i = listposts.length; i >= 0; i--) {
         str='';
+        pub=listposts[i];
       
       
-      if( (listposts[i])[5]=='C' ){
+      if( pub[5]=='C' ){
         var x1= await blockstack.getFile(listpost1[i], {decrypt: false });
         x=x1;
       }
-      else if( (listposts[i])[5]=='T' ){
+      else if( pub[5]=='T' ){
         var x2= await blockstack.getFile(listpost2[i], {decrypt: true});
         x=x2;
       }
