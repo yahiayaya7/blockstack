@@ -23,14 +23,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
    blockstack.signUserOut(window.location.href='https://yahiayaya7.github.io/blockstack/home')
  
  }
-  function showProfile(profile) {
+  /*function showProfile(profile) {
    var person = new blockstack.Person(profile)
    
    document.getElementById("nom").innerHTML =person.name();
    document.getElementById("avatar-image").setAttribute('src', person.avatarUrl());
    //document.getElementById('section-1').style.display = 'none'
    //document.getElementById('section-2').style.display = 'block'
- }
+ }*/
 
  function issigin()
  { if (blockstack.isUserSignedIn()) { document.getElementById("state").innerHTML ='signed ok';}
