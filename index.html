@@ -28,11 +28,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
  function issigin()
  { if (blockstack.isUserSignedIn()) { document.getElementById("state").innerHTML ='signed ok';
             var statusImage = document.createElement("img");
-            statusImage.src ="images/public2.png";
+            statusImage.src ="images/public.png";
             statusImage.style="height:15px;width:15px;";
 
             var status = document.getElementById("status");
             status.appendChild(statusImage);
+            document.getElementById("status").innerHTML =statusImage;
 
  
  }
@@ -603,9 +604,9 @@ catch(err){
          <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
         <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;">  <script>showid();</script></p> <br>
-        <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-top: 5px;"> <script>showInfo();</script></p> <br>
-        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-top: 5px;"> </p> <br>
-        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-top: 5px;"> </p>
+        <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-top: 15px;"> <script>showInfo();</script></p> <br>
+        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-top: 15px;"> </p> <br>
+        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-top: 15px;"> </p>
         </div>
       </div>
       <br>
