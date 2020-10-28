@@ -26,7 +26,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   
 
  function issigin()
- { if (blockstack.isUserSignedIn()) { document.getElementById("state").innerHTML ='signed ok';}
+ { if (blockstack.isUserSignedIn()) { document.getElementById("state").innerHTML ='signed ok';
+            var statusImage = document.createElement("img");
+            statusImage.src ="images/public2.png";
+            statusImage.style="height:15px;width:15px;";
+
+            var status = document.getElementById("status");
+            status.appendChild(statusImage);
+
+ 
+ }
   else{ document.getElementById("state").innerHTML ='not signed'; }
   if (blockstack.isUserSignedIn()) {
   
@@ -82,7 +91,7 @@ alert(err.message);}
   }
 
 //******************************************************** SHOW PROFILE ******************************************************
-  async function showProfile() {
+  async function showInfo() {
    //var person = new blockstack.Person(profile)
    //document.getElementById("nom").innerHTML =person.name();
    //document.getElementById("avatar-image").setAttribute('src', person.avatarUrl());
@@ -94,12 +103,22 @@ alert(err.message);}
     document.getElementById("gender").innerHTML= profile[2];
 
 
+
+
     }
      
          catch(err){
 alert(err.message);}
   
   }
+
+
+  function showProfile(profile) {
+   var person = new blockstack.Person(profile)
+   
+   document.getElementById("nom").innerHTML =person.name();
+   document.getElementById("avatar-image").setAttribute('src', person.avatarUrl());
+ }
   
   //******************************************************** SHARE ******************************************************
  async function share(){
@@ -580,13 +599,13 @@ catch(err){
       <!-- Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
+         <div id="status"></div> <h4 class="w3-center">My Profile</h4>
          <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
         <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;">  <script>showid();</script></p> <br>
-        <img src="images/name.png" style="height:25px;width:25px"> <p id ="fullname" style="display: inline;"> <script>showProfile();</script></p> <br>
-        <img src="images/birthday.png" style="height:20px;width:20px"> <p id ="birthday" style="display: inline;"> </p> <br>
-        <img src="images/birthday.png" style="height:20px;width:20px"> <p id ="gender" style="display: inline;"> </p>
+        <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-top: 5px;"> <script>showInfo();</script></p> <br>
+        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-top: 5px;"> </p> <br>
+        <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-top: 5px;"> </p>
         </div>
       </div>
       <br>
