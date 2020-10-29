@@ -606,10 +606,10 @@ catch(err){
          <p id="status"></p> <h4 class="w3-center">My Profile</h4>
          <p class="w3-center"><img src="images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
-        <div style="margin-top: 10px;"> <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;margin-left: 5px;">  <script>showid();</script></p> </div>
-        <div style="margin-top: 10px;"> <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-left: 5px;"> <script>showInfo();</script></p> </div>
-        <div style="margin-top: 10px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-left: 5px;"> </p> </div>
-        <div style="margin-top: 10px;margin-bottom: 15px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-left: 5px;"> </p> </div>
+        <div style="margin-top: 13px;"> <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;margin-left: 5px;">  <script>showid();</script></p> </div>
+        <div style="margin-top: 13px;"> <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-left: 5px;"> <script>showInfo();</script></p> </div>
+        <div style="margin-top: 13px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-left: 5px;"> </p> </div>
+        <div style="margin-top: 13px;margin-bottom: 20px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-left: 5px;"> </p> </div>
         </div>
       </div>
       <br>
@@ -617,25 +617,44 @@ catch(err){
       <!-- Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/group.png" style="height:21px;width:21px"> </i> My Groups</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Group 1</p>
-            <p>Group 2</p>
-          </div>
+
           <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> My Followed</button>
-          <div id="Demo2" class="w3-hide w3-container">
+          <div id="Demo1" class="w3-hide w3-container">
             <p>Dadoun Amayasse</p>
             <p>Lyes Badis</p>
           </div>
+
+          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Add a Followed</button>
+          <div id="Demo2" class="w3-hide w3-container">            
+              <input align="center" type="text" class="w3-card" name="addfollowed" style="margin-top: 10px;width: 100%;" placeholder="Enter an ID" id="" required><br/>
+              <input align="center" type="button" style="margin-top: 5px;border-radius: 8px;margin-bottom: 5px;" class="w3-button w3-theme w3-center" name="addfollowed" value="Create" id="" onclick="" /><br/>           
+              <p id=""></p> <br/>   
+          </div>
+
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/group.png" style="height:21px;width:21px"> </i> My Groups</button>
+          <div id="Demo3" class="w3-hide w3-container">
+            <p>Group 1</p>
+            <p>Group 2</p>
+          </div>
+
           <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Create a group</button>
           <div id="Demo4" class="w3-hide w3-container">            
               <input align="center" type="text" class="w3-card" name="creategroup" maxlength="20" style="margin-top: 10px;width: 100%;" placeholder="Choose a name" id="groupname" required><br/>
-              <input align="center" type="button" style="margin-top: 5px;border-radius: 5px;margin-bottom: 5px;margin-left: 50%;margin-right: 50%;" class="w3-button w3-theme" name="creategroup" value="Create" id="creategroup" onclick="creategroup();" /><br/>           
+              <input align="center" type="button" style="margin-top: 5px;border-radius: 8px;margin-bottom: 5px;" class="w3-button w3-theme w3-center" name="creategroup" value="Create" id="creategroup" onclick="creategroup();" /><br/>           
               <p id="groupkey"></p> <br/>   
           </div>
+
+          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Add an existing group</button>
+          <div id="Demo5" class="w3-hide w3-container">            
+              <input align="center" type="text" class="w3-card" name="addgroup" maxlength="20" style="margin-top: 10px;width: 100%;" placeholder="Enter the group name" id="" required><br/>
+              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 10px;width: 100%;" placeholder="Enter the group key" id="" required><br/>
+              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 10px;width: 100%;" placeholder="Enter ID of owner" id="" required><br/>
+              <input align="center" type="button" style="margin-top: 5px;border-radius: 8px;margin-bottom: 5px;" class="w3-button w3-theme w3-center" name="addgroup" value="Create" id="addgroup" onclick="addgroup();" /><br/>           
+              <p id=""></p> <br/>   
+          </div>
+
           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/img.png" style="height:20px;width:20px"> </i> My Photos</button>
           <div id="Demo3" class="w3-hide w3-container"> 
-
          <div class="w3-row-padding">
          <br>
            <div class="w3-half">
@@ -658,6 +677,7 @@ catch(err){
            </div>
          </div>
           </div>
+
         </div>      
       </div>
       <br>
