@@ -293,9 +293,10 @@ alert(err.message);}
           deleteButton.className="w3-button w3-margin-bottom w3-right";
           deleteButton.style="color :white;";
           deleteButton.title="delete";
+          deleteButton.id="deletebtn";
           //deleteButton.onclick=deletef(listpost[i]);
 
-          if(deleteButton.onclick){
+          if(document.getElementById('deletebtn').clicked == true){
             deletef(listpost[i]);
           }
 
