@@ -295,6 +295,10 @@ alert(err.message);}
           deleteButton.title="delete";
           //deleteButton.onclick=deletef(listpost[i]);
 
+          if(deleteButton.onclick){
+            deletef(listpost[i]);
+          }
+
             var deleteImage = document.createElement("img");
             deleteImage.src ="images/delete.png";
             deleteImage.style="height:21px;width:21px;";
@@ -370,7 +374,7 @@ alert(err.message);}
 
 
         }
-        deleteButton.onclick=deletef(listpost[i]);
+        
         }
         
         }
