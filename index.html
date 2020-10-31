@@ -101,15 +101,15 @@ alert(err.message);}
 
 
     if(profil == null){
-      fullname = '« Information missing »';
-      birthday = '« Information missing »';
-      gender = '« Information missing »';
+      fullname = '« Missing information »';
+      birthday = '« Missing information »';
+      gender = '« Missing information »';
     }
 
     else{
-    var profile = profil.toString().split('X');
+    var profile = profil.split('X');
     var fullname = profile[0];
-    var birthday = profile[1].toString();
+    var birthday = profile[1];
     var gender = profile[2];
     }
 
