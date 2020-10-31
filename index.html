@@ -352,7 +352,7 @@ alert(err.message);}
               name.style="margin-top:22px; margin-left:15px;font-size:25px;font-family:'century gothic';";
               var profil = await blockstack.getFile('Profil_index', {decrypt: false });
               if(profil == null){
-                fullname = '« Missing information »';
+                fullname = 'Username';
               }
               else{
               var profile = profil.toString().split('X');
