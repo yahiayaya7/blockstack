@@ -271,7 +271,14 @@ alert(err.message);}
           
           var span = document.createElement("span");
           span.className="w3-right w3-opacity w3-margin-top";
-		      span.textContent=listpost[i];
+            var year = listpost[i].slice(-14,-10);
+            var month = listpost[i].slice(-10,-8);
+            var day = listpost[i].slice(-8,-6);
+            var hour = listpost[i].slice(-6,-4);
+            var min = listpost[i].slice(-4,-2);
+            var sec = listpost[i].slice(-2);
+            var date = day + '/' + month + '/' + year + '  ' + hour + ':' + min + ':' + sec
+		      span.textContent=date;
 
           var line = document.createElement("hr");
        //   line.className="w3-clear";
