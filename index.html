@@ -81,8 +81,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       gender = 'Female';}
     else {gender = 'Not defined';}
       
-    //var profile = name.toString() +'X'+ birthday.toString() +'X'+ gender;
-    var profile = name.toString() +'X'+ '22 August 1995' +'X'+ gender;
+    var profile = name.toString() +'X'+ birthday.toString() +'X'+ gender;
+    //var profile = name.toString() +'X'+ '22 August 1995' +'X'+ gender;
     
     blockstack.putFile(nameprofileindex, profile, {encrypt: false });
     }
@@ -115,7 +115,7 @@ alert(err.message);}
     }
 
     document.getElementById("fullname").innerHTML= fullname;
-    document.getElementById("birthday").innerHTML= birthday;
+    document.getElementById("birthday1").innerHTML= birthday;
     document.getElementById("gender").innerHTML= gender;
 
 
@@ -632,7 +632,7 @@ catch(err){
          <hr>
         <div style="margin-top: 13px;"> <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;margin-left: 5px;">  <script>showid();</script></p> </div>
         <div style="margin-top: 13px;"> <img src="images/post.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-left: 5px;"> <script>showInfo();</script></p> </div>
-        <div style="margin-top: 13px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-left: 5px;"> </p> </div>
+        <div style="margin-top: 13px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday1" style="display: inline;margin-left: 5px;"> </p> </div>
         <div style="margin-top: 13px;margin-bottom: 20px;"> <img src="images/gender2.png" style="height:23px;width:23px;"> <p id ="gender" style="display: inline;margin-left: 5px;"> </p> </div>
         </div>
       </div>
