@@ -81,7 +81,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       gender = 'Female';}
     else {gender = 'Not defined';}
       
-    var profile = name.toString() +'X'+ birthday.toString() +'X'+ gender;
+    //var profile = name.toString() +'X'+ birthday.toString() +'X'+ gender;
+    var profile = name.toString() +'X'+ '22 August 1995' +'X'+ gender;
     
     blockstack.putFile(nameprofileindex, profile, {encrypt: false });
     }
@@ -558,10 +559,10 @@ catch(err){
   <a class="w3-right">
   <input class="w3-bar-item w3-button w3-hide-small w3-padding-large" style="height:50px;width:250px;" type="text" class="form-control" placeholder="search">
   </a>
-
+<!--
   <a id="state" class="w3-right w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" align="center">
     <script>issigin();</script>
-   </a>
+   </a>  -->
 
  </div>
 </div>
@@ -632,7 +633,7 @@ catch(err){
         <div style="margin-top: 13px;"> <img src="images/id.png"  style="height:21px;width:21px;display:inline;"> <p id ="showid" style="display: inline;margin-left: 5px;">  <script>showid();</script></p> </div>
         <div style="margin-top: 13px;"> <img src="images/name.png" style="height:25px;width:25px;"> <p id ="fullname" style="display: inline;margin-left: 5px;"> <script>showInfo();</script></p> </div>
         <div style="margin-top: 13px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="birthday" style="display: inline;margin-left: 5px;"> </p> </div>
-        <div style="margin-top: 13px;margin-bottom: 20px;"> <img src="images/birthday.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-left: 5px;"> </p> </div>
+        <div style="margin-top: 13px;margin-bottom: 20px;"> <img src="images/gender3.png" style="height:20px;width:20px;"> <p id ="gender" style="display: inline;margin-left: 5px;"> </p> </div>
         </div>
       </div>
       <br>
@@ -647,7 +648,7 @@ catch(err){
             <p>Lyes Badis</p>
           </div>
 
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Add a Followed</button>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addfollow.png" style="height:21px;width:21px"></i> Add a Followed</button>
           <div id="Demo2" class="w3-hide w3-container">            
               <input align="center" type="text" class="w3-card" name="addfollowed" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter an ID" id="" required><br/>
               <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 95px;" class="w3-button w3-theme w3-center" name="addfollowed" value="Add" id="" onclick="" /><br/>           
@@ -660,14 +661,14 @@ catch(err){
             <p>Group 2</p>
           </div>
 
-          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Create a group</button>
+          <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/creategroup.png" style="height:21px;width:21px"></i> Create a group</button>
           <div id="Demo4" class="w3-hide w3-container">            
               <input align="center" type="text" class="w3-card" name="creategroup" maxlength="20" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Choose a name" id="groupname" required><br/>
               <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 95px;" class="w3-button w3-theme w3-center" name="creategroup" value="Create" id="creategroup" onclick="creategroup();" /><br/>           
               <p id="groupkey"></p> <br/>   
           </div>
 
-          <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> Add an existing group</button>
+          <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addgroup.png" style="height:21px;width:21px"></i> Add an existing group</button>
           <div id="Demo5" class="w3-hide w3-container">            
               <input align="center" type="text" class="w3-card" name="addgroup" maxlength="20" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group name" id="" required><br/>
               <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group key" id="" required><br/>
