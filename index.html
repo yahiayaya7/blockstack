@@ -107,9 +107,9 @@ alert(err.message);}
     }
 
     else{
-    var profile = profil.split('X');
+    var profile = profil.toString().split('X');
     var fullname = profile[0];
-    var birthday = profile[1];
+    var birthday = profile[1].toString();
     var gender = profile[2];
     }
 
@@ -351,9 +351,15 @@ alert(err.message);}
               name.className="w3-left";
               name.style="margin-top:22px; margin-left:15px;font-size:25px;font-family:'century gothic';";
               var profil = await blockstack.getFile('Profil_index', {decrypt: false });
+              if(profil == null){
+                fullname = '« Missing information »';
+              }
+              else{
               var profile = profil.toString().split('X');
               //document.getElementById("fullname").innerHTML= profile[0];
-              name.textContent=profile[0];
+              fullname = profile[0];
+              }
+              name.textContent = fullname;
               
 
           pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
