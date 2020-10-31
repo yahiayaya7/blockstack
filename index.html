@@ -143,7 +143,7 @@ alert(err.message);}
          var public = document.getElementById("public").checked;
          var private = document.getElementById("private").checked;
          var d=new Date;
-         var dd = d.getFullYear().toString()+("0" + (d.getMonth().toString())).slice(-2)+("0" + (d.getDate().toString())).slice(-2)+("0" + (d.getHours().toString())).slice(-2)+("0" + (d.getMinutes().toString())).slice(-2)+("0" + (d.getSeconds().toString())).slice(-2);
+         var dd = d.getFullYear().toString()+("0" + ((d.getMonth() +1).toString())).slice(-2)+("0" + (d.getDate().toString())).slice(-2)+("0" + (d.getHours().toString())).slice(-2)+("0" + (d.getMinutes().toString())).slice(-2)+("0" + (d.getSeconds().toString())).slice(-2);
          
              
 
