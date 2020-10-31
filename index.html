@@ -99,9 +99,18 @@ alert(err.message);}
    try{
     var profil = await blockstack.getFile('Profil_index', {decrypt: false });
     var profile = profil.toString().split('X');
-    document.getElementById("fullname").innerHTML= profile[0];
-    document.getElementById("birthday").innerHTML= profile[1].toString();
-    document.getElementById("gender").innerHTML= profile[2];
+    var fullname = profile[0];
+    var birthday = profile[1].toString();
+    var gender = profile[2];
+
+    if(profile == null){
+      fullname = '« Information missing »';
+      birthday = '« Information missing »';
+      gender = '« Information missing »';
+    }
+    document.getElementById("fullname").innerHTML= fullname;
+    document.getElementById("birthday").innerHTML= birthday;
+    document.getElementById("gender").innerHTML= gender;
 
 
 
