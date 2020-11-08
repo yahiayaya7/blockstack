@@ -457,6 +457,41 @@ async function addfollow() {
 }
 
 
+//******************************************************** SHOW FOLLOWED ******************************************************
+async function showfollow() {
+
+    var followindex= 'MyFollowed_index';
+    try{ 
+          var followindexcont= await blockstack.getFile(followindex, {decrypt: true });
+
+          if(followindexcont == null){
+            document.getElementById("showfollow").innerHTML = 'No followed yet'; 
+          }
+          else{
+            var strfollow = followindexcont.split('</br>');
+            var i;
+            for(i=0; i < strfollow.length; i++){
+              var id = strfollow[i].toString();
+              var idcontent = document.createElement("p");
+              idcontent.textContent=id;
+
+              var container = document.getElementById("showfollow");
+              container.appendChild(idcontent);
+
+
+
+            }
+
+          }
+
+
+        }
+        catch(err){
+     alert(err.message);}
+}
+
+
+
 //******************************************************** CREATE A GROUP ******************************************************
 async function creategroup() {
    
@@ -702,6 +737,7 @@ catch(err){
             <p>Dadoun Amayasse</p>
             <p>Lyes Badis</p>
             <p>DAIFI Salaheddine</p>
+            <p id="showfollow"><script>showfollow();</script></p>
           </div>
 
           <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addfollow2.png" style="height:21px;width:21px"></i> Add a Followed</button>
