@@ -583,7 +583,8 @@ async function addgroup() {
       //var listpost = t.split(/\n/);
       var i;
       var str='';
-      for (i = 0; i < listpost.length; i++) {
+      //for (i = 0; i < listpost.length; i++) {
+      for (i = listpost.length-1; i >= 0; i--) {
         var x= await blockstack.getFile(listpost[i], { username: id, decrypt: false });
         if(x==null){str=str;}
         else{
@@ -636,32 +637,14 @@ async function addgroup() {
               commentImage.style="height:21px;width:21px;";
 
 
-       
-          var deleteButton = document.createElement("button");
-          deleteButton.className="w3-button w3-margin-bottom w3-right";
-          deleteButton.style="color :white;";
-          deleteButton.title="delete";
-          deleteButton.id="deletebtn";
-          //deleteButton.onclick=deletef(listpost[i]);
-
-
-            var deleteImage = document.createElement("img");
-            deleteImage.src ="images/delete.png";
-            deleteImage.style="height:21px;width:21px;";
-
-
             var publicImage = document.createElement("img");
               publicImage.src ="images/public.png";
               publicImage.style="height:19px;width:19px; margin-left:9px;";
               publicImage.className="w3-right w3-margin-top";
               publicImage.title="public";
 
-
-
               likeButton.appendChild(likeImage);
-              
               commentButton.appendChild(commentImage);
-
               deleteButton.appendChild(deleteImage);
              
             
@@ -687,8 +670,6 @@ async function addgroup() {
           
             content.style="width : 100%; border : 1 px solid black";
           content.textContent=str;
-          
-          
 
 
           pubDiv.appendChild(image);
@@ -703,10 +684,8 @@ async function addgroup() {
           pubDiv.appendChild(likeButton);
           
           pubDiv.appendChild(commentButton);
-          pubDiv.appendChild(deleteButton);
           
         
-         
           
           container.appendChild(pubDiv);
 
