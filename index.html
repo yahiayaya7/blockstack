@@ -583,13 +583,139 @@ async function addgroup() {
       //var listpost = t.split(/\n/);
       var i;
       var str='';
-for (i = 0; i < listpost.length; i++) {
-  var x= await blockstack.getFile(listpost[i], { username: id, decrypt: false });
-  if(x==null){str=str;}
-  else{str += listpost[i] +"==>"+ x + "<br>";}
-}
-   document.getElementById("othercontent").innerHTML=str;
-   //document.getElementById("othercontentpost").innerHTML=x;
+      for (i = 0; i < listpost.length; i++) {
+        var x= await blockstack.getFile(listpost[i], { username: id, decrypt: false });
+        if(x==null){str=str;}
+        else{
+      
+        str = x;
+          var pubDiv = document.createElement("div");
+          var image = document.createElement("img");
+          image.src = "images/avatar2.png";
+          image.className ="w3-left w3-circle";
+          image.style ="width:60px;margin-top:10px;";
+          
+          var span = document.createElement("span");
+          span.className="w3-right w3-opacity w3-margin-top";
+            var year = listpost[i].slice(-14,-10);
+            var month = listpost[i].slice(-10,-8);
+            var day = listpost[i].slice(-8,-6);
+            var hour = listpost[i].slice(-6,-4);
+            var min = listpost[i].slice(-4,-2);
+            var sec = listpost[i].slice(-2);
+            var date = day + '/' + month + '/' + year + '  ' + hour + ':' + min + ':' + sec
+		      span.textContent=date;
+
+          var line = document.createElement("hr");
+       //   line.className="w3-clear";
+       line.style="margin-top:80px; margin-bottom:10px;";
+
+       var line2 = document.createElement("hr");
+       //   line.className="w3-clear";
+       line2.style="margin-top:10px; margin-bottom:5px;";
+
+		
+          var likeButton = document.createElement("button");
+          likeButton.className="w3-button w3-margin-bottom ";
+          likeButton.style="color :white;";
+          likeButton.title="Like";
+
+            var likeImage = document.createElement("img");
+            likeImage.src ="images/like.png";
+            likeImage.style="height:21px;width:21px;";
+
+        
+
+          var commentButton = document.createElement("button");
+          commentButton.className="w3-button w3-margin-bottom";
+          commentButton.style = "color : white;margin-left:5px;";
+          commentButton.title="Comment";
+
+            var commentImage = document.createElement("img");
+              commentImage.src ="images/comment.png";
+              commentImage.style="height:21px;width:21px;";
+
+
+       
+          var deleteButton = document.createElement("button");
+          deleteButton.className="w3-button w3-margin-bottom w3-right";
+          deleteButton.style="color :white;";
+          deleteButton.title="delete";
+          deleteButton.id="deletebtn";
+          //deleteButton.onclick=deletef(listpost[i]);
+
+
+            var deleteImage = document.createElement("img");
+            deleteImage.src ="images/delete.png";
+            deleteImage.style="height:21px;width:21px;";
+
+
+            var publicImage = document.createElement("img");
+              publicImage.src ="images/public.png";
+              publicImage.style="height:19px;width:19px; margin-left:9px;";
+              publicImage.className="w3-right w3-margin-top";
+              publicImage.title="public";
+
+
+
+              likeButton.appendChild(likeImage);
+              
+              commentButton.appendChild(commentImage);
+
+              deleteButton.appendChild(deleteImage);
+             
+            
+              var container = document.getElementById("pubs");
+              var name = document.createElement("span");
+              name.className="w3-left";
+              name.style="margin-top:22px; margin-left:15px;font-size:25px;font-family:'century gothic';";
+              var profil = await blockstack.getFile('Profil_index', { username: id, decrypt: false });
+              if(profil == null){
+                fullname = 'Username';
+              }
+              else{
+              var profile = profil.toString().split('X');
+              //document.getElementById("fullname").innerHTML= profile[0];
+              fullname = profile[0];
+              }
+              name.textContent = fullname;
+              
+
+          pubDiv.className="w3-container w3-card w3-white w3-round w3-margin";
+
+          var content = document.createElement("p");
+          
+            content.style="width : 100%; border : 1 px solid black";
+          content.textContent=str;
+          
+          
+
+
+          pubDiv.appendChild(image);
+		      pubDiv.appendChild(name);
+          pubDiv.appendChild(publicImage);
+          pubDiv.appendChild(span);
+          
+           pubDiv.appendChild(line);
+          
+          pubDiv.appendChild(content);
+          pubDiv.appendChild(line2);
+          pubDiv.appendChild(likeButton);
+          
+          pubDiv.appendChild(commentButton);
+          pubDiv.appendChild(deleteButton);
+          
+        
+         
+          
+          container.appendChild(pubDiv);
+
+
+
+      
+      }
+  }
+
         }
     catch(err){
      alert(err.message);}
@@ -734,9 +860,6 @@ catch(err){
 
           <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> My Followed</button>
           <div id="Demo1" class="w3-hide w3-container">
-            <p>Dadoun Amayasse</p>
-            <p>Lyes Badis</p>
-            <p>DAIFI Salaheddine</p>
             <p id="showfollow"><script>showfollow();</script></p>
           </div>
 
@@ -918,8 +1041,8 @@ catch(err){
       
       <div class="w3-card w3-round w3-white w3-padding-16 w3-center">
         <p>Show other content</p>
-        <input align="center" type="text" class="w3-card" name="" maxlength="20" style="margin-top: 15px;width: 90%;border-radius: 10px; border: none;" placeholder="Enter ID.." id="" required><br/>
-        <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 8px;" class="w3-button w3-theme w3-center" name="" value="Show" id="" onclick="" /><br/>   
+        <input align="center" type="text" class="w3-card" name="" maxlength="20" style="margin-top: 15px;width: 90%;border-radius: 10px; border: none;" placeholder="Enter ID.." id="idother" required><br/>
+        <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 8px;" class="w3-button w3-theme w3-center" name="" value="Show" id="" onclick="othercontent();" /><br/>   
       </div>
       <br>
       
