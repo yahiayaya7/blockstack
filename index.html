@@ -58,7 +58,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   const userData = blockstack.loadUserData()
    //showid(userData.profile)
   
-   document.getElementById("showid").innerHTML =userData.username;
+   //document.getElementById("showid").innerHTML =userData.username;
  }
    var person = new blockstack.Person(userData);
    document.getElementById("showid").innerHTML =person.name();
@@ -434,6 +434,29 @@ for (i = 0; i < listpost.length; i++) {
      }
 
 
+//******************************************************** FOLLOW ******************************************************
+async function addfollow() {
+    var addfollow=document.getElementById("addfollow").value;
+    var followindex= 'MyFollowed_index';
+    try{ 
+          var followindexcont= await blockstack.getFile(groupindex, {decrypt: true });
+          var str = addfollow +  '</br>';
+          if(followindexcont == null){
+            var strfollow = str; 
+          }
+          else{
+            var strfollow = followindexcont.toString() + str; 
+          }
+
+
+          blockstack.putFile(followindex, strfollow, {encrypt: true});
+          document.getElementById("followadded").innerHTML = 'Followed with succes';
+       }
+        catch(err){
+     alert(err.message);}
+}
+
+
 //******************************************************** CREATE A GROUP ******************************************************
 async function creategroup() {
    
@@ -462,6 +485,31 @@ async function creategroup() {
           blockstack.putFile(groupindex, strgroup, {encrypt: true});
           var showkey = 'Your group key: ' + groupkey;
           document.getElementById("groupkey").innerHTML = showkey;
+       }
+        catch(err){
+     alert(err.message);}
+}
+
+
+//******************************************************** ADD A GROUP ******************************************************
+async function addgroup() {
+    var addgroupname=document.getElementById("addgroupname").value;
+    var addgroupkey=document.getElementById("addgroupkey").value;
+    var addidowner=document.getElementById("addidowner").value;
+    var groupindex= 'ADD_GROUP_index';
+    try{ 
+          var groupindexcont= await blockstack.getFile(groupindex, {decrypt: true });
+          var str = addgroupname +'XX'+ addgroupkey + 'XX' + addidowner + '</br>';
+          if(groupindexcont == null){
+            var strgroup = str; 
+          }
+          else{
+            var strgroup = groupindexcont.toString() + str; 
+          }
+
+
+          blockstack.putFile(groupindex, strgroup, {encrypt: true});
+          document.getElementById("groupadded").innerHTML = 'Group added with succes';
        }
         catch(err){
      alert(err.message);}
@@ -658,9 +706,9 @@ catch(err){
 
           <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addfollow2.png" style="height:21px;width:21px"></i> Add a Followed</button>
           <div id="Demo2" class="w3-hide w3-container">            
-              <input align="center" type="text" class="w3-card" name="addfollowed" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter an ID" id="" required><br/>
-              <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 95px;" class="w3-button w3-theme w3-center" name="addfollowed" value="Add" id="" onclick="" /><br/>           
-              <p id=""></p> <br/>   
+              <input align="center" type="text" class="w3-card" name="addfollowed" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter an ID" id="addfollow" required><br/>
+              <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 95px;" class="w3-button w3-theme w3-center" name="addfollowed" value="Add" id="" onclick="addfollow();" /><br/>           
+              <p id="followadded"></p> <br/>   
           </div>
 
           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/group.png" style="height:21px;width:21px"> </i> My Groups</button>
@@ -678,11 +726,11 @@ catch(err){
 
           <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addgroup2.png" style="height:24px;width:24px"></i> Add an existing group</button>
           <div id="Demo5" class="w3-hide w3-container">            
-              <input align="center" type="text" class="w3-card" name="addgroup" maxlength="20" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group name" id="" required><br/>
-              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group key" id="" required><br/>
-              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter ID of owner" id="" required><br/>
+              <input align="center" type="text" class="w3-card" name="addgroup" maxlength="20" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group name" id="addgroupkey" required><br/>
+              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter the group key" id="addgroupkey" required><br/>
+              <input align="center" type="text" class="w3-card" name="addgroup" style="margin-top: 15px;width: 100%;border-radius: 10px; border: none;" placeholder="Enter ID of owner" id="addidowner" required><br/>
               <input align="center" type="button" style="margin-top: 10px;border-radius: 20px;width: 120px;margin-bottom: 5px;margin-left: 95px;" class="w3-button w3-theme w3-center" name="addgroup" value="Add" id="addgroup" onclick="addgroup();" /><br/>           
-              <p id=""></p> <br/>   
+              <p id="groupadded"></p> <br/>   
           </div>
 
           <button onclick="myFunction('Demo6')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/img.png" style="height:20px;width:20px"> </i> My Photos</button>
