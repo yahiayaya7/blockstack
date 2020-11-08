@@ -58,10 +58,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   const userData = blockstack.loadUserData()
    //showid(userData.profile)
   
-   //document.getElementById("showid").innerHTML =userData.username;
+   document.getElementById("showid").innerHTML =userData.username;
  }
    var person = new blockstack.Person(userData);
-   document.getElementById("showid").innerHTML =person.name();
+   //document.getElementById("showid").innerHTML =person.name();
 
  }
 
@@ -439,7 +439,7 @@ async function addfollow() {
     var addfollow=document.getElementById("addfollow").value;
     var followindex= 'MyFollowed_index';
     try{ 
-          var followindexcont= await blockstack.getFile(groupindex, {decrypt: true });
+          var followindexcont= await blockstack.getFile(followindex, {decrypt: true });
           var str = addfollow +  '</br>';
           if(followindexcont == null){
             var strfollow = str; 
