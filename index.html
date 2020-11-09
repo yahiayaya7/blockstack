@@ -619,7 +619,9 @@ try{
           container.appendChild(myaddgroups);
 
           for(i=0; i < straddgroup.length; i++){
-            var addgroup = straddgroup[i].toString();
+            var addgroup1 = straddgroup[i].toString();
+            var addgroupsp = addgroup1.split('XX');
+            var addgroup = addgroupsp[0];
             var addgroupcontent = document.createElement("p");
             
             addgroupcontent.textContent=addgroup;
