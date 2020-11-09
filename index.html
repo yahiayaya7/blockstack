@@ -589,22 +589,41 @@ try{
         document.getElementById("showgroups").innerHTML = 'No existing groups'; 
       }
       else{
-        var strgroup = groupindexcont.split('</br>');
         var i;
         var container = document.getElementById("showgroups");
-          
-        var mygroups = document.createElement("p");
-        mygroups.textContent="My groups :";
-        mygroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
-        container.appendChild(mygroups);
 
-        for(i=0; i < strgroup.length; i++){
-          var group = strgroup[i].toString();
-          var groupcontent = document.createElement("p");
-          
-          groupcontent.textContent=group;
+        if(groupindexcont != null){
+          var strgroup = groupindexcont.split('</br>');  
+          var mygroups = document.createElement("p");
+          mygroups.textContent="My groups :";
+          mygroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
+          container.appendChild(mygroups);
 
-          container.appendChild(groupcontent);
+          for(i=0; i < strgroup.length; i++){
+            var group = strgroup[i].toString();
+            var groupcontent = document.createElement("p");
+            
+            groupcontent.textContent=group;
+
+            container.appendChild(groupcontent);
+          }
+        }
+        
+        if(addgroupindexcont != null){
+          var straddgroup = addgroupindexcont.split('</br>');  
+          var myaddgroups = document.createElement("p");
+          myaddgroups.textContent="My groups :";
+          myaddgroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
+          container.appendChild(myaddgroups);
+
+          for(i=0; i < straddgroup.length; i++){
+            var addgroup = straddgroup[i].toString();
+            var addgroupcontent = document.createElement("p");
+            
+            groupcontent.textContent=group;
+
+            container.appendChild(addgroupcontent);
+          }
         }
 
       }
