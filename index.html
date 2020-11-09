@@ -213,7 +213,7 @@ for (j = 0; j < listpostpriv.length; j++) {
             pubs.removeChild(child); 
             child = pubs.lastElementChild;
         }
-        refresh();
+        
         //setTimeout(location.reload() , 1000);
         setTimeout(function(){
         window.location.reload(1);
@@ -242,7 +242,7 @@ alert(err.message);}
             str1 = str1 + listpostpub[i] + 'X';
           }
 }
-setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 100);
+setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 50);
     //document.getElementById("global").innerHTML=pubindex                       
          return true})}
 
@@ -901,7 +901,7 @@ catch(err){
 
           <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> My Followed</button>
           <div id="Demo1" class="w3-hide w3-container">
-            <p id="showfollow"><script>showfollow();</script></p>
+            <p id="showfollow"><script>showfollow(); refresh();</script></p>
           </div>
 
           <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addfollow2.png" style="height:21px;width:21px"></i> Add a Followed</button>
