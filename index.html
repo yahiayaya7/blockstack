@@ -224,7 +224,27 @@ alert(err.message);}
   
   }
 
+ //******************************************************** REFRESH INDEX ****************************************************** 
+ function refresh() {
+  {  var listoffilespub='';
+  var filenamepubindex='PUB_index';
+  blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
+  var strpub = listoffilespub.toString();
+  var listpostpub = strpub.split('X');
+  var i;
+  var str1='';
+  for (i = 0; i < listpostpub.length; i++) {
+    var postpub = listpostpub[i];
+          if (postpub[3] =='L') {
+            str1 = str1 + listpostpub[i] + 'X';
+          }
+}
+setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 100);
+    //document.getElementById("global").innerHTML=pubindex                       
+         return true})}
+ }
   
+ refresh();
   
    //******************************************************** SHOW CONTENT ****************************************************** 
    async function pubcontent(){ 
