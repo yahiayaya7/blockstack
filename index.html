@@ -579,13 +579,13 @@ async function addgroup() {
 
     var j=0; 
 
-    for(j=0;j<pubs.length;j++){
+    for(j=0;j<=pubs.length;j++){
 
         pubs[j].remove();
 
     }
 
-    pubs.remove();
+    
   var p='PUB_index';
   var id=document.getElementById("idother").value;
   try{var t= await blockstack.getFile(p, { username: id, decrypt: false });
