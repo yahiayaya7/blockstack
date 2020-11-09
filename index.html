@@ -205,7 +205,7 @@ alert(err.message);}
 
   
   
-   //******************************************************** SHOW PUBLIC CONTENT ****************************************************** 
+   //******************************************************** SHOW CONTENT ****************************************************** 
    async function pubcontent(){ 
      
   var p1='PUB_index';
@@ -316,7 +316,7 @@ alert(err.message);}
           deleteButton.style="color :white;";
           deleteButton.title="delete";
           deleteButton.id="deletebtn";
-          //deleteButton.onclick=deletef(listpost[i]);
+          deleteButton.onclick= deletef;
 
 
             var deleteImage = document.createElement("img");
@@ -395,7 +395,9 @@ alert(err.message);}
           pubDiv.appendChild(deleteButton);
           
         
-         
+         pubDiv.id = listpost[i];
+
+         alert(pubDiv.id);
           
           container.appendChild(pubDiv);
 
