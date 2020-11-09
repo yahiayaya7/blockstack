@@ -139,7 +139,7 @@ alert(err.message);}
   //******************************************************** SHARE ******************************************************
  async function share(){
     try{ 
-      refresh();
+      
          var tpost=document.getElementById("postshare").value;
          var public = document.getElementById("public").checked;
          var private = document.getElementById("private").checked;
@@ -213,6 +213,7 @@ for (j = 0; j < listpostpriv.length; j++) {
             pubs.removeChild(child); 
             child = pubs.lastElementChild;
         }
+        refresh();
         //setTimeout(location.reload() , 1000);
         setTimeout(function(){
         window.location.reload(1);
