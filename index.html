@@ -595,7 +595,7 @@ try{
         if(groupindexcont != null){
           var strgroup = groupindexcont.split('</br>');  
           var mygroups = document.createElement("p");
-          mygroups.textContent="My groups :";
+          mygroups.textContent="My own groups :";
           mygroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
           container.appendChild(mygroups);
 
@@ -612,7 +612,7 @@ try{
         if(addgroupindexcont != null){
           var straddgroup = addgroupindexcont.split('</br>');  
           var myaddgroups = document.createElement("p");
-          myaddgroups.textContent="My groups :";
+          myaddgroups.textContent="My added groups :";
           myaddgroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
           container.appendChild(myaddgroups);
 
@@ -620,7 +620,7 @@ try{
             var addgroup = straddgroup[i].toString();
             var addgroupcontent = document.createElement("p");
             
-            groupcontent.textContent=group;
+            groupcontent.textContent=addgroup;
 
             container.appendChild(addgroupcontent);
           }
@@ -948,8 +948,6 @@ catch(err){
 
           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/group.png" style="height:21px;width:21px"> </i> My Groups</button>
           <div id="Demo3" class="w3-hide w3-container">
-            <p>GSI</p>
-            <p>Group 2</p>
             <p id="showgroups"><script>showgroups();</script></p>
           </div>
 
