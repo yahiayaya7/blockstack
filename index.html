@@ -152,9 +152,9 @@ alert(err.message);}
       blockstack.putFile(filenamepub, tpost, {encrypt: false});
       //document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepub, {encrypt: false});
       
-     {  var listoffilespub='';
+     /*{  var listoffilespub='';
       var filenamepubindex='PUB_index';
-      setTimeout( blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
+  blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
    var strpub = listoffilespub.toString();
       var listpostpub = strpub.split('X');
       var i;
@@ -164,11 +164,22 @@ for (i = 0; i < listpostpub.length; i++) {
         if (postpub[3] =='L') {
           str1 = str1 + listpostpub[i] + 'X';
           }
-}   
-    var pubindex = str1 + filenamepub; 
+} */
+    var filenamepubindex='PUB_index';
+    var str1 = await blockstack.getFile(filenamepubindex, {decrypt: false });
+    if(str1 == null){
+      var pubindex = filenamepub; 
+    }
+    else{
+      var pubindex = str1 + 'X' + filenamepub;
+    }
+
+
+
+    
      setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 100);
     //document.getElementById("global").innerHTML=pubindex                       
-         return true}) , 30);}
+        // return true})}
      
     }
       
