@@ -591,14 +591,19 @@ try{
       else{
         var strgroup = groupindexcont.split('</br>');
         var i;
+        var container = document.getElementById("showgroups");
+          
+        var strgroup = document.createElement("p");
+        strgroup.textContent="My groups :" + "</br>";
+        strgroup.style = "text-align: center;color: #4CAF50;"
+        container.appendChild(strgroup);
+
         for(i=0; i < strgroup.length; i++){
           var group = strgroup[i].toString();
           var groupcontent = document.createElement("p");
-          var strgroup = "My groups :" + "</br>";
-          strgroup.style = "color: red;"
-          groupcontent.textContent=strgroup + group;
+          
+          groupcontent.textContent=group;
 
-          var container = document.getElementById("showgroups");
           container.appendChild(groupcontent);
         }
 
