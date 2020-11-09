@@ -139,7 +139,6 @@ alert(err.message);}
   //******************************************************** SHARE ******************************************************
  async function share(){
     try{ 
-      
          var tpost=document.getElementById("postshare").value;
          var public = document.getElementById("public").checked;
          var private = document.getElementById("private").checked;
@@ -213,7 +212,6 @@ for (j = 0; j < listpostpriv.length; j++) {
             pubs.removeChild(child); 
             child = pubs.lastElementChild;
         }
-        
         //setTimeout(location.reload() , 1000);
         setTimeout(function(){
         window.location.reload(1);
@@ -226,33 +224,7 @@ alert(err.message);}
   
   }
 
- //******************************************************** REFRESH INDEX ****************************************************** 
- async function refresh() {
-  try{ 
-    {  var listoffilespub='';
-  var filenamepubindex='PUB_index';
-  blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
-  var strpub = listoffilespub.toString();
-  var listpostpub = strpub.split('X');
-  var i;
-  var str1='';
-  for (i = 0; i < listpostpub.length; i++) {
-    var postpub = listpostpub[i];
-          if (postpub[3] =='L') {
-            str1 = str1 + listpostpub[i] + 'X';
-          }
-}
-setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 50);
-    //document.getElementById("global").innerHTML=pubindex                       
-         return true})}
-
-  }
-
-         catch(err){
-alert(err.message);}
- }
   
-
   
    //******************************************************** SHOW CONTENT ****************************************************** 
    async function pubcontent(){ 
@@ -364,8 +336,10 @@ alert(err.message);}
           deleteButton.className="w3-button w3-margin-bottom w3-right";
           deleteButton.style="color :white;";
           deleteButton.title="delete";
-          deleteButton.id= listpost[i];
+          var dlt = listpost[i]
+          deleteButton.id = dlt;
          // deleteButton.setAttribute('onclick','deletef()') ;
+         deleteButton.onclick = deletef();
 
 
             var deleteImage = document.createElement("img");
@@ -616,8 +590,8 @@ async function addgroup() {
  
 //******************************************************** DELETE A POST ******************************************************
  function deletef(){
-              var del = document.getElementById(listpost);
-  var filetodelete=document.getElementById(deleteButton.id).value;
+  // var del = document.getElementById(listpost);
+  var filetodelete=document.getElementById(dlt).value;
   try{ blockstack.deleteFile(id,{wasSigned: false})}
  catch(err){alert(err.message);}
  }
@@ -901,7 +875,7 @@ catch(err){
 
           <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/amis.png" style="height:21px;width:21px"></i> My Followed</button>
           <div id="Demo1" class="w3-hide w3-container">
-            <p id="showfollow"><script>showfollow(); refresh();</script></p>
+            <p id="showfollow"><script>showfollow();</script></p>
           </div>
 
           <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/addfollow2.png" style="height:21px;width:21px"></i> Add a Followed</button>
