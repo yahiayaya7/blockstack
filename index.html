@@ -339,7 +339,7 @@ alert(err.message);}
           var dlt = listpost[i]
           deleteButton.id = dlt;
          // deleteButton.setAttribute('onclick','deletef()') ;
-         deleteButton.onclick = deletef();
+         deleteButton.onclick = deletef(dlt);
 
 
             var deleteImage = document.createElement("img");
@@ -589,9 +589,9 @@ async function addgroup() {
   
  
 //******************************************************** DELETE A POST ******************************************************
- function deletef(){
+ function deletef(id){
   // var del = document.getElementById(listpost);
-  var filetodelete=document.getElementById(dlt).value;
+  //var filetodelete=document.getElementById(dlt).value;
   try{ blockstack.deleteFile(id,{wasSigned: false})}
  catch(err){alert(err.message);}
  }
