@@ -600,7 +600,9 @@ try{
           container.appendChild(mygroups);
 
           for(i=0; i < strgroup.length; i++){
-            var group = strgroup[i].toString();
+            var group1 = strgroup[i].toString();
+            var groupsp = group1.split('XX');
+            var group = groupsp[0];
             var groupcontent = document.createElement("p");
             
             groupcontent.textContent=group;
