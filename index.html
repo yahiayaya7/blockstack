@@ -152,9 +152,9 @@ alert(err.message);}
       blockstack.putFile(filenamepub, tpost, {encrypt: false});
       //document.getElementById("turl").innerHTML=await blockstack.getFileUrl(filenamepub, {encrypt: false});
       
-      {  var listoffilespub='';
+     {  var listoffilespub='';
       var filenamepubindex='PUB_index';
-  blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
+      setTimeout( blockstack.listFiles((filename)=>{listoffilespub=listoffilespub+filename+'X';
    var strpub = listoffilespub.toString();
       var listpostpub = strpub.split('X');
       var i;
@@ -168,7 +168,7 @@ for (i = 0; i < listpostpub.length; i++) {
     var pubindex = str1 + filenamepub; 
      setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 100);
     //document.getElementById("global").innerHTML=pubindex                       
-         return true})}
+         return true}) , 30);}
      
     }
       
