@@ -201,13 +201,17 @@ for (j = 0; j < listpostpriv.length; j++) {
             pubs.removeChild(child); 
             child = pubs.lastElementChild;
         }
-        setTimeout(window.location.href='https://yahiayaya7.github.io/blockstack/index.html' , 1000);
+        setTimeout(refresh() , 1000);
         
 
     }
          catch(err){
 alert(err.message);}
   
+  }
+
+  function refresh() {
+    window.location.href='https://yahiayaya7.github.io/blockstack/index.html';
   }
 
   
