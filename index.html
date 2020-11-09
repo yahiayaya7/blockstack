@@ -575,15 +575,14 @@ async function addgroup() {
  //******************************************************** OTHER CONTENT ****************************************************** 
    async function othercontent(){ 
     
-    var pubs = document.getElementsByClassName('w3-container w3-card w3-white w3-round w3-margin');
+    var pubs = document.getElementById('pubs');
 
-    var j=0; 
+    var child = pubs.lastElementChild;  
+        while (child) { 
+            pubs.removeChild(child); 
+            child = pubs.lastElementChild;
 
-    for(j=0;j<=pubs.length;j++){
-
-        pubs[j].remove();
-
-    }
+        }
 
     
   var p='PUB_index';
