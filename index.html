@@ -166,7 +166,7 @@ for (i = 0; i < listpostpub.length; i++) {
           }
 }   
     var pubindex = str1 + filenamepub; 
-     setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 40);
+     setTimeout(blockstack.putFile(filenamepubindex, pubindex, {encrypt: false }) , 100);
     //document.getElementById("global").innerHTML=pubindex                       
          return true})}
      
@@ -191,7 +191,7 @@ for (j = 0; j < listpostpriv.length; j++) {
           }
 }   
     var privindex = str2 + filenamepriv; 
-    setTimeout(blockstack.putFile(filenameprivindex, privindex, {encrypt: true }) , 40);
+    setTimeout(blockstack.putFile(filenameprivindex, privindex, {encrypt: true }) , 100);
     //document.getElementById("global").innerHTML=pubindex                       
          return true})}
     } 
@@ -204,7 +204,7 @@ for (j = 0; j < listpostpriv.length; j++) {
         //setTimeout(location.reload() , 1000);
         setTimeout(function(){
         window.location.reload(1);
-        }, 6000);
+        }, 5000);
         
 
     }
