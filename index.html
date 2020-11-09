@@ -575,6 +575,43 @@ async function addgroup() {
      alert(err.message);}
 }
   
+
+//******************************************************** SHOW GROUP LIST ******************************************************
+async function showgroups() {
+
+var groupindex= 'GROUP_index';
+var addgroupindex= 'ADD_GROUP_index';
+try{ 
+      var groupindexcont= await blockstack.getFile(groupindex, {decrypt: true });
+      var addgroupindexcont= await blockstack.getFile(addgroupindex, {decrypt: true });
+
+      if(groupindexcont == null || addgroupindexcont == null){
+        document.getElementById("showgroups").innerHTML = 'No existing groups'; 
+      }
+      else{
+        var strgroup = groupindexcont.split('</br>');
+        var i;
+        for(i=0; i < strgroup.length; i++){
+          var group = strgroup[i].toString();
+          var groupcontent = document.createElement("p");
+          var strgroup = "My groups :" + "</br>";
+          strgroup.style = "color: red;"
+          groupcontent.textContent=strgroup + group;
+
+          var container = document.getElementById("showgroups");
+          container.appendChild(groupcontent);
+        }
+
+      }
+
+
+    }
+    catch(err){
+ alert(err.message);}
+}
+
+
+
  
 //******************************************************** LIST FILES ****************************************************** 
  function listf(){ var listoffiles=' ';
@@ -889,6 +926,7 @@ catch(err){
           <div id="Demo3" class="w3-hide w3-container">
             <p>GSI</p>
             <p>Group 2</p>
+            <p id="showgroups"><script>showgroups();</script></p>
           </div>
 
           <button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i style="margin-right: 10px;"><img src="images/creategroup.png" style="height:21px;width:21px"></i> Create a group</button>
