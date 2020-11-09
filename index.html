@@ -315,7 +315,7 @@ alert(err.message);}
           deleteButton.className="w3-button w3-margin-bottom w3-right";
           deleteButton.style="color :white;";
           deleteButton.title="delete";
-          deleteButton.id="deletebtn";
+          deleteButton.id= listpost[i];
           deleteButton.onclick= deletef;
 
 
@@ -397,7 +397,7 @@ alert(err.message);}
         
          pubDiv.id = listpost[i];
 
-         alert(pubDiv.id);
+        
           
           container.appendChild(pubDiv);
 
@@ -566,10 +566,10 @@ async function addgroup() {
   
  
 //******************************************************** DELETE A POST ******************************************************
- function deletef(posttodelete){
+ function deletef(){
               
-  //var filetodelete=document.getElementById("posttodelete").value;
-  try{ blockstack.deleteFile(posttodelete,{wasSigned: false})}
+  var filetodelete=document.getElementById(deleteButton.id).value;
+  try{ blockstack.deleteFile(filetodelete,{wasSigned: false})}
  catch(err){alert(err.message);}
  }
   
