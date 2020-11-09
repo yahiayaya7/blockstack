@@ -195,7 +195,13 @@ for (j = 0; j < listpostpriv.length; j++) {
     //document.getElementById("global").innerHTML=pubindex                       
          return true})}
     } 
-      
+    var pubs = document.getElementById('pubs');
+    var child = pubs.lastElementChild;  
+        while (child) { 
+            pubs.removeChild(child); 
+            child = pubs.lastElementChild;
+        }
+        pubcontent();
 
     }
          catch(err){
@@ -578,12 +584,10 @@ async function addgroup() {
    async function othercontent(){ 
     
     var pubs = document.getElementById('pubs');
-
     var child = pubs.lastElementChild;  
         while (child) { 
             pubs.removeChild(child); 
             child = pubs.lastElementChild;
-
         }
 
     
