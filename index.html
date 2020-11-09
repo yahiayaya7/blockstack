@@ -593,10 +593,10 @@ try{
         var i;
         var container = document.getElementById("showgroups");
           
-        var strgroup = document.createElement("p");
-        strgroup.textContent="My groups :" + "</br>";
-        strgroup.style = "text-align: center;color: #4CAF50;"
-        container.appendChild(strgroup);
+        var mygroups = document.createElement("p");
+        mygroups.textContent="My groups :";
+        mygroups.style = "text-align: center;color: #4CAF50;font-weight: bold;"
+        container.appendChild(mygroups);
 
         for(i=0; i < strgroup.length; i++){
           var group = strgroup[i].toString();
