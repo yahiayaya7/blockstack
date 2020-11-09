@@ -316,7 +316,7 @@ alert(err.message);}
           deleteButton.style="color :white;";
           deleteButton.title="delete";
           deleteButton.id= listpost[i];
-          deleteButton.onclick= deletef(deleteButton.id);
+         // deleteButton.setAttribute('onclick','deletef()') ;
 
 
             var deleteImage = document.createElement("img");
@@ -395,7 +395,7 @@ alert(err.message);}
           pubDiv.appendChild(deleteButton);
           
         
-         pubDiv.id = listpost[i];
+        
 
         
           
@@ -566,9 +566,9 @@ async function addgroup() {
   
  
 //******************************************************** DELETE A POST ******************************************************
- function deletef(id){
-              
- // var filetodelete=document.getElementById(deleteButton.id).value;
+ function deletef(){
+              var del = document.getElementById(listpost);
+  var filetodelete=document.getElementById(deleteButton.id).value;
   try{ blockstack.deleteFile(id,{wasSigned: false})}
  catch(err){alert(err.message);}
  }
